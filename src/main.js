@@ -28,7 +28,68 @@ if (emailInput) {
   });
 }
 
-// FAQ Tab Logic
+// Form Submission Logic
+const forms = document.querySelectorAll('.email-form, .footer-form');
+
+forms.forEach(form => {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const button = form.querySelector('button');
+    const originalText = button.innerText;
+    const input = form.querySelector('input[name="email"]');
+    
+    // 1. Loading State
+    button.disabled = true;
+    button.innerText = 'Saving...';
+    button.style.opacity = '0.8';
+    button.style.cursor = 'wait';
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        // 2. Success State
+        button.innerText = 'Joined!';
+        button.style.backgroundColor = '#07A063'; // Green
+        button.style.opacity = '1';
+        button.style.cursor = 'default';
+        input.value = ''; // Clear input
+        
+        // Reset after 3 seconds (optional, but good for re-use if needed)
+        setTimeout(() => {
+          button.innerText = 'Joined!'; // Keep success message or reset? Usually keep "Joined" to confirm
+        }, 3000);
+      } else {
+        // Error State
+        const data = await response.json();
+        if (Object.hasOwn(data, 'errors')) {
+          alert(data["errors"].map(error => error["message"]).join(", "));
+        } else {
+          alert("Oops! There was a problem submitting your form");
+        }
+        // Reset button
+        button.disabled = false;
+        button.innerText = originalText;
+        button.style.opacity = '1';
+        button.style.cursor = 'pointer';
+      }
+    } catch (error) {
+      alert("Oops! There was a problem submitting your form");
+      button.disabled = false;
+      button.innerText = originalText;
+      button.style.opacity = '1';
+      button.style.cursor = 'pointer';
+    }
+  });
+});
+
 const faqCategories = document.querySelectorAll('.faq-category');
 const faqGroups = document.querySelectorAll('.faq-content-group');
 
