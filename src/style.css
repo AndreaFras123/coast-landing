@@ -205,7 +205,7 @@ strong {
   background-color: #F3F3F3;
   width: 100%;
   text-align: center;
-  padding: 1.5rem 1rem;
+  padding: 3rem 1rem; /* Increased padding from 1.5rem */
   margin-top: 4rem; /* Add separation from email card */
 }
 
