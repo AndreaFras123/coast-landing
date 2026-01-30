@@ -1,0 +1,365 @@
+:root {
+  --font-heading: 'Nunito', sans-serif;
+  --font-body: 'Nunito Sans', sans-serif;
+  
+  /* Colors extracted from design */
+  --color-primary: #f5a623; /* Gold/Orange */
+  --color-primary-hover: #e09612;
+  --color-text-dark: #1a1a2e; /* Dark Navy/Black */
+  --color-text-body: #333333;
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f9f9f9; /* Light grey for banner */
+  --color-bg-card: #fcfcfc;
+  --color-border-card: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-body);
+  line-height: 1.6;
+}
+
+/* Typography */
+h1 {
+  font-family: var(--font-heading);
+  font-weight: 800; /* Bold */
+  font-size: 4.5rem; /* Increased from 3.5rem */
+  line-height: 1.1;
+  color: var(--color-text-dark);
+  margin-bottom: 2.5rem;
+}
+
+strong {
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+/* Layout */
+#app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  position: sticky; /* Make navbar sticky */
+  top: 0;
+  z-index: 1000; /* Ensure it stays on top */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Optional: adds subtle shadow when scrolling */
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 100px; /* Increased size significantly */
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text-dark);
+  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 1.2rem; /* Increased size */
+}
+
+.btn {
+  padding: 0.8rem 2rem; /* Larger button */
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-heading);
+  font-size: 1.1rem; /* Increased size */
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Announcement Banner */
+.announcement-banner {
+  background-color: var(--color-bg-secondary);
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  color: #666;
+  border-bottom: 1px solid #eee;
+}
+
+/* Main Content Wrapper (Centers Hero + Email) */
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 4rem 4rem 4rem 4rem; /* Increased bottom padding */
+  align-items: center;
+  gap: 4rem;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.feature-list {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-family: var(--font-body);
+  font-weight: 500; /* Medium */
+  font-size: 1.3rem; /* Increased from 1.1rem */
+  margin-bottom: 1rem;
+  color: var(--color-text-dark);
+}
+
+.check-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px; /* Increased */
+  height: 28px; /* Increased */
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.hero-description {
+  font-size: 1.3rem; /* Increased from 1.1rem */
+  color: #4a4a4a;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* Hero Image Placeholder */
+.image-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-color: #ddd;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-weight: bold;
+}
+
+/* Trust Banner */
+.trust-banner {
+  background-color: #F3F3F3;
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 4rem; /* Add separation from email card */
+}
+
+.trust-banner p {
+  font-family: var(--font-heading);
+  font-weight: 700; /* Nunito Bold */
+  color: #999; /* Light gray text as per typical light bg designs, or #707070 */
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Email Section */
+.email-section {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 4rem 6rem; /* Reduced top padding since banner is there */
+}
+
+.email-card {
+  background-color: var(--color-bg-card);
+  padding: 3rem 4rem; /* More padding */
+  border-radius: 25px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+  border: 1px solid var(--color-border-card);
+  width: 100%;
+  max-width: 800px; /* Increased width from 600px */
+  text-align: center;
+}
+
+.email-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  font-size: 1.1rem; /* Larger text */
+}
+
+/* Specific styling for the 'Coming soon' text */
+.email-header p {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: #707070;
+}
+
+.info-icon {
+  font-size: 1.3rem;
+  color: #999;
+}
+
+/* Interactive States */
+.email-form {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 0.7rem; 
+  border-radius: 50px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  transition: all 0.3s ease; /* Smooth transition for focus */
+}
+
+/* Add focus ring effect to the whole form container when input is focused */
+.email-form:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.2); /* Glow effect */
+  transform: translateY(-2px);
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding-left: 1.5rem;
+}
+
+.mail-icon-img {
+  width: 32px;
+  height: 32px;
+  margin-right: 1rem;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+/* Highlight icon when focused */
+.email-form:focus-within .mail-icon-img {
+  opacity: 1;
+}
+
+.email-form input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.2rem;
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+}
+
+.email-form input::placeholder {
+  color: #bbb;
+}
+
+.btn-submit {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Bouncy feel */
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(245, 166, 35, 0.3);
+}
+
+.btn-submit:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 166, 35, 0.4);
+}
+
+.btn-submit:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(245, 166, 35, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .hero-content {
+    margin: 0 auto;
+  }
+  
+  .feature-list li {
+    justify-content: center;
+  }
+  
+  .hero-description {
+    margin: 0 auto;
+  }
+
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .nav-container {
+    padding: 1rem 2rem;
+  }
+
+  .hero {
+    padding: 2rem;
+  }
+}

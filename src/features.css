@@ -1,0 +1,103 @@
+/* ... existing styles ... */
+
+/* Features Section */
+.features-section {
+  padding: 4rem 4rem;
+  background-color: #f9f9f9; /* Light background for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically center content */
+  min-height: 75vh; /* Takes up full viewport height */
+}
+
+.features-container {
+  max-width: 1440px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  min-height: 800px; /* Further increased height */
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image-bg {
+  height: 400px; /* Significantly increased height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem; /* Increased padding */
+}
+
+.feature-icon {
+  max-width: 80%; /* Adjusted for better fit */
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.card-content {
+  padding: 3.5rem; /* Increased padding */
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Pushes button to bottom if text varies */
+  text-align: center;
+  justify-content: space-between; /* Better vertical spacing */
+}
+
+.card-content h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 2rem; /* Increased font size */
+  color: var(--color-text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.card-content p {
+  font-family: var(--font-body);
+  color: #666;
+  font-size: 1.3rem; /* Increased font size */
+  margin-bottom: 2.5rem;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+/* Secondary Button (Gold outline/filled for features) */
+.btn-secondary {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 1rem 2.5rem; /* Larger button */
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1.2rem; /* Larger text */
+  align-self: center;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Responsive Features */
+@media (max-width: 1100px) {
+  .features-container {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coast - Learn Faster</title>
+    <!-- Google Fonts: Nunito and Nunito Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="/src/features.css">
+    <link rel="stylesheet" href="/src/alternating.css">
+    <link rel="stylesheet" href="/src/faq.css">
+    <link rel="stylesheet" href="/src/footer.css">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="logo">
+            <!-- Upload your logo to /public/logo.svg -->
+            <img src="/logo.svg" alt="Coast Logo" class="logo-img">
+          </div>
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#join" id="join-beta-btn" class="btn btn-primary">Join Beta</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Announcement Banner -->
+      <div class="announcement-banner">
+        <p>Join 200+ other students waiting to level up. Don't get left behind exclusive beta rewards for early signups.</p>
+      </div>
+
+      <div class="content-wrapper">
+        <!-- Hero Section -->
+        <main class="hero">
+        <div class="hero-content">
+          <h1>
+            Learn Faster.<br>
+            Retain Longer.<br>
+            Pass Everything.
+          </h1>
+          
+          <ul class="feature-list">
+            <li>
+              <span class="check-icon">✓</span>
+              AI-powered gamified learning
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              Deep, personalized tutoring
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              Boost your GPA effortlessly
+            </li>
+          </ul>
+
+          <p class="hero-description">
+            Coast combines deep AI tutoring with gamified elements to make <strong>studying fun</strong> and <strong>effective</strong>. Engage with the content, unlock your potential, and watch your GPA climb
+          </p>
+        </div>
+
+        <div class="hero-image">
+          <!-- Upload your illustration to /public/illustration.svg -->
+          <img src="/illustration.svg" alt="Coast Learning Illustration" class="hero-img" style="width: 100%; height: auto;">
+        </div>
+      </main>
+
+      <!-- Email Capture Card -->
+      <section class="email-section">
+        <div class="email-card">
+          <div class="email-header">
+            <span class="info-icon">ⓘ</span>
+            <p>Coming soon - join the waitlist for exclusive beta benefits & rewards</p>
+          </div>
+          <form action="https://formspree.io/f/xlgnlpae" method="POST" class="email-form">
+            <div class="input-group">
+              <!-- Upload your mail icon to /public/mail-icon.svg -->
+              <img src="/mail-icon.svg" alt="Mail" class="mail-icon-img">
+              <input type="email" id="email-input" name="email" placeholder="Enter email ..." required>
+            </div>
+            <button type="submit" class="btn btn-submit">Save Me</button>
+          </form>
+        </div>
+        </section>
+      </div>
+
+      <!-- Trust Banner -->
+      <section class="trust-banner">
+        <p>Built for students at Maastricht University. Backed by data from 100+ students.</p>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="features-section">
+        <div class="features-container">
+          <!-- ... existing cards ... -->
+          <div class="feature-card">
+            <div class="card-image-bg" style="background-color: #171D48;">
+              <img src="/feature-icon-1.svg" alt="AI Mentor" class="feature-icon">
+            </div>
+            <div class="card-content">
+              <h3>Adaptive AI Mentor</h3>
+              <p>Stuck on a concept? Our AI doesn't just give you the answer. It learns your study style and explains the 'how' behind the question, ensuring you actually master the topic before the next level.</p>
+              <a href="#join" class="btn btn-secondary feature-btn">Meet your Mentor →</a>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="card-image-bg" style="background-color: #07A063;">
+              <img src="/feature-icon-2.svg" alt="Exam Archive" class="feature-icon">
+            </div>
+            <div class="card-content">
+              <h3>Real Exam Archive</h3>
+              <p>Access a massive, structured database of your university’s actual past papers. No more messy PDFs, just clean, searchable, and tagged questions organized by topic and difficulty.</p>
+              <a href="#join" class="btn btn-secondary feature-btn">Browse the Vault →</a>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="card-image-bg" style="background-color: #98B7FA;">
+              <img src="/feature-icon-3.svg" alt="Lootboxes" class="feature-icon">
+            </div>
+            <div class="card-content">
+              <h3>Lootboxes & Level-ups</h3>
+              <p>Turn your study sessions into streaks. Earn XP for every correct answer, climb the campus leaderboard, and unlock rewards that make the 2 AM library grind actually feel worth it.</p>
+              <a href="#join" class="btn btn-secondary feature-btn">See Rewards →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Alternating Features (Deep Dive) -->
+      <section class="alternating-features">
+        
+        <!-- Row 1: Text Left, Image Right -->
+        <div class="feature-row">
+          <div class="feature-text-content">
+            <h2>Don’t Just Practice.<br>Understand.</h2>
+            <p>Stop memorizing mark schemes. Our AI breaks down complex questions into step-by-step logic, helping you spot the patterns for next time.</p>
+            <ul class="feature-list-check">
+              <li>
+                <span class="check-circle">✓</span>
+                Adaptive conversational breakdown
+              </li>
+              <li>
+                <span class="check-circle">✓</span>
+                User-model for adaptive and personalized recommendations and actions
+              </li>
+            </ul>
+          </div>
+          <div class="feature-image-container">
+            <!-- Upload /public/practice-preview.png -->
+            <img src="/practice-preview.png" alt="AI Conversation Preview" class="feature-showcase-img">
+          </div>
+        </div>
+
+        <!-- Row 2: Image Left, Text Right -->
+        <div class="feature-row reverse">
+          <div class="feature-image-container">
+            <!-- Upload /public/addictive-preview.png -->
+            <img src="/addictive-preview.png" alt="Gamification Dashboard" class="feature-showcase-img">
+          </div>
+          <div class="feature-text-content">
+            <h2>Make Studying Addictive.</h2>
+            <p>Forget boring progress bars. Your "Tidebook" is your living academic trophy case. Every past paper you solve and topic you master earns you coins, XP, and unique collectible fish to populate your personal aquarium. Watch your collection grow as your knowledge deepens.</p>
+            <ul class="feature-list-check">
+              <li>
+                <span class="check-circle">✓</span>
+                Maintain Your Streak
+              </li>
+              <li>
+                <span class="check-circle">✓</span>
+                Show Off Your Mastery
+              </li>
+              <li>
+                <span class="check-circle">✓</span>
+                Build Your Collection
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="faq-section">
+        <div class="faq-header">
+          <h2>Coast FAQ</h2>
+          <p>Got questions? We’ve got answers. Learn more about how Coast works and what to expect when we launch.</p>
+        </div>
+
+        <div class="faq-container">
+          <!-- Sidebar -->
+          <div class="faq-sidebar">
+            <div class="faq-category active" data-target="access">
+              <div class="category-indicator"></div>
+              <span class="category-name">Access & Pricing</span>
+            </div>
+            <div class="faq-category" data-target="ai">
+              <div class="category-indicator"></div>
+              <span class="category-name">The AI & Accuracy</span>
+            </div>
+            <div class="faq-category" data-target="content">
+              <div class="category-indicator"></div>
+              <span class="category-name">Content & Subjects</span>
+            </div>
+            <div class="faq-category" data-target="gamification">
+              <div class="category-indicator"></div>
+              <span class="category-name">Gamification & Rewards</span>
+            </div>
+          </div>
+
+          <!-- Content Card -->
+          <div class="faq-content-card">
+            
+            <!-- Access & Pricing Content -->
+            <div id="access" class="faq-content-group active">
+              <h3 class="group-title">Access & Pricing</h3>
+              <div class="qa-grid">
+                <div class="qa-item">
+                  <h4>Is Coast free to use?</h4>
+                  <p>Yes! We are launching with a generous free tier that gives you access to past papers and daily AI tutoring. We will have a Pro plan for unlimited AI deep-dives and advanced analytics, but our goal is to keep it student-budget friendly.</p>
+                </div>
+                <div class="qa-item">
+                  <h4>When can I actually start using it?</h4>
+                  <p>We are currently in private beta. If you join the waitlist today, you'll be first in line when we open up the next wave of invites (and you might snag some early-adopter perks).</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- The AI & Accuracy Content -->
+            <div id="ai" class="faq-content-group">
+              <h3 class="group-title">The AI & Accuracy</h3>
+              <div class="qa-grid">
+                <div class="qa-item">
+                  <h4>Is the AI Tutor just ChatGPT wrapped in a different skin?</h4>
+                  <p>No. Unlike general chatbots, our AI is grounded in real, structured past paper data. It doesn't just guess; it uses the specific context of your university's curriculum and marking schemes to explain the logic behind the answer, not just the result.</p>
+                </div>
+                <div class="qa-item">
+                  <h4>Can I trust the explanations?</h4>
+                  <p>Our system uses a "Teacher-in-the-Loop" verification method. While AI is powerful, we verify our core datasets against official marking schemes to ensure you aren't learning the wrong thing.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content & Subjects -->
+            <div id="content" class="faq-content-group">
+              <h3 class="group-title">Content & Subjects</h3>
+              <div class="qa-grid">
+                <div class="qa-item">
+                  <h4>Does this cover my specific university and course?</h4>
+                  <p>We are launching initially with International Buisness modules at Maastricht. We are adding new courses every week based on user votes, so sign up and tell us what you study!</p>
+                </div>
+                <div class="qa-item">
+                  <h4>How do you calculate the "Difficulty Rating" for questions?</h4>
+                  <p>We use a proprietary OCR system that analyzes the complexity of the question, the average time students take to solve it, and historical pass rates for that specific topic.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gamification & Rewards -->
+            <div id="gamification" class="faq-content-group">
+              <h3 class="group-title">Gamification & Rewards</h3>
+              <div class="qa-grid">
+                <div class="qa-item">
+                  <h4>What exactly are "Lootboxes"?</h4>
+                  <p>Lootboxes are rewards you earn by maintaining study streaks and mastering topics, they come in the form of fish and bait. They contain XP boosts, customization items for your profile/avatar, and exclusive badges to show off on the leaderboard.</p>
+                </div>
+                <div class="qa-item">
+                  <h4>Can I pay to win?</h4>
+                  <p>Never. Your leaderboard rank is determined purely by your academic progress and mastery. You can't buy grades, and you can't buy your way to the top of our leaderboard.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-top">
+            <!-- Brand -->
+            <div class="footer-brand">
+              <!-- Upload /public/Coastlogo-white.svg -->
+              <img src="/Coastlogo-white.svg" alt="Coast Logo" class="footer-logo">
+              <p class="footer-slogan">Level Up Your Uni Life.</p>
+            </div>
+
+            <!-- Links -->
+            <div class="footer-links-group">
+              <div class="footer-column">
+                <h4>Features</h4>
+                <ul>
+                  <li><a href="#features">AI Tutor</a></li>
+                  <li><a href="#features">Past paper Vault</a></li>
+                  <li><a href="#features">Gamification</a></li>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <h4>About us</h4>
+                <ul>
+                  <li><a href="/contact.html">Contact</a></li>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                  <li><a href="/privacy.html">Privacy Policy</a></li>
+                  <li><a href="/terms.html">Terms of Service</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Socials -->
+            <div class="footer-socials">
+              <a href="#"><img src="/icon-instagram.svg" alt="Instagram" class="social-icon"></a>
+              <a href="#"><img src="/icon-facebook.svg" alt="Facebook" class="social-icon"></a>
+              <a href="#"><img src="/icon-tiktok.svg" alt="TikTok" class="social-icon"></a>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="footer-cta">
+            <h3>Ready to get that First Class degree?</h3>
+            <form action="https://formspree.io/f/xlgnlpae" method="POST" class="footer-form">
+              <div class="footer-input-group">
+                <!-- Upload /public/mail-icon.svg -->
+                <img src="/mail-icon.svg" alt="Mail" class="footer-mail-icon-img">
+                <input type="email" name="email" placeholder="Enter email ..." required>
+              </div>
+              <button type="submit" class="btn-footer">Join Beta</button>
+            </form>
+          </div>
+
+          <!-- Copyright -->
+          <div class="footer-bottom">
+            <p>© 2026 Coast. Built by students, for students.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Coast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="/src/footer.css">
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .page-container {
+        max-width: 800px;
+        margin: 4rem auto;
+        padding: 0 2rem;
+        flex: 1; /* Pushes footer down */
+        width: 100%;
+      }
+      h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+      p { margin-bottom: 2rem; color: #666; }
+      .contact-email { font-weight: 700; color: var(--color-primary); text-decoration: none; }
+      .form-group { margin-bottom: 1.5rem; }
+      label { display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--color-text-dark); }
+      input, textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: var(--font-body);
+        font-size: 1rem;
+      }
+      textarea { height: 150px; resize: vertical; }
+      .submit-btn {
+        background-color: var(--color-primary);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 30px;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="/"><img src="/logo.svg" alt="Coast Logo" class="logo-img" style="height: 60px;"></a>
+        </div>
+        <div class="nav-links">
+          <a href="/">Home</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="page-container">
+      <h1>Contact Us</h1>
+      <p>Have questions or feedback? We'd love to hear from you. You can also email us directly at <a href="mailto:hello@coast.app" class="contact-email">hello@coast.app</a>.</p>
+      
+      <form action="https://formspree.io/f/xlgnlpae" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Re-use footer but simplified or full -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-bottom" style="border:none; padding-top:0;">
+          <p>© 2026 Coast. Built by students, for students.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
