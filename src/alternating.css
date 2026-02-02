@@ -90,7 +90,7 @@
   /* Removed box-shadow as per user request to remove grey border look */
 }
 
-/* Responsive */
+/* Responsive - Tablet */
 @media (max-width: 1100px) {
   .feature-row, .feature-row.reverse {
     grid-template-columns: 1fr;
@@ -105,6 +105,59 @@
   
   .feature-row.reverse {
     display: flex;
-    flex-direction: column-reverse; /* Ensure image stays on top or bottom consistent with design preference, usually image top on mobile */
+    flex-direction: column-reverse;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  .alternating-features {
+    padding: 2rem 0.75rem;
+    gap: 2.5rem;
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .feature-row {
+    gap: 1.5rem;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .feature-text-content {
+    max-width: 100%;
+  }
+  
+  .feature-image-container {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .feature-showcase-img {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 12px;
+  }
+  
+  .feature-text-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .feature-text-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .feature-list-check li {
+    font-size: 0.85rem;
+    gap: 0.6rem;
+  }
+  
+  .check-circle {
+    min-width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
   }
 }
