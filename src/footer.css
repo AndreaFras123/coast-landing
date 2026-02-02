@@ -81,7 +81,6 @@
 .social-icon {
   width: 24px;
   height: 24px;
-  filter: invert(1); /* Make black icons white if they are black SVGs */
   opacity: 0.8;
   transition: opacity 0.3s;
 }
