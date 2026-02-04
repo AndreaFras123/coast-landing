@@ -88,14 +88,27 @@
             <span class="info-icon">ⓘ</span>
             <p>Coming soon - invite a friend to advance in the waitlist. The more friends you bring, the faster you get in to try the beta.</p>
           </div>
-          <form action="https://formspree.io/f/xlgnlpae" method="POST" class="email-form">
+          <form action="https://formspree.io/f/xlgnlpae" method="POST" class="email-form" id="main-email-form">
             <div class="input-group">
               <!-- Upload your mail icon to /public/mail-icon.svg -->
               <img src="/mail-icon.svg" alt="Mail" class="mail-icon-img">
               <input type="email" id="email-input" name="email" placeholder="Enter email ..." required>
+              <input type="hidden" name="referred_by" id="referred-by-input" value="">
             </div>
             <button type="submit" class="btn btn-submit">Save Me</button>
           </form>
+          <!-- Share section (shown after signup) -->
+          <div class="share-section" id="share-section" style="display: none;">
+            <p class="share-title">🎉 You're in! Share to move up the list:</p>
+            <div class="share-link-container">
+              <input type="text" id="share-link" class="share-link-input" readonly>
+              <button type="button" id="copy-link-btn" class="btn btn-copy">Copy</button>
+            </div>
+            <div class="share-buttons">
+              <a id="share-whatsapp" class="share-btn whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+              <a id="share-instagram" class="share-btn instagram" href="https://www.instagram.com/coast_academy_official/" target="_blank" rel="noopener">Instagram</a>
+            </div>
+          </div>
         </div>
         </section>
       </div>

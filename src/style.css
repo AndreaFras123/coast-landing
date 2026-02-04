@@ -358,6 +358,88 @@ strong {
   box-shadow: 0 2px 10px rgba(245, 166, 35, 0.3);
 }
 
+/* Share Section (shown after signup) */
+.share-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.share-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--color-text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.share-link-container {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.share-link-input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #555;
+  background: #f9f9f9;
+}
+
+.btn-copy {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-copy:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.share-btn.whatsapp {
+  background-color: #25D366;
+}
+
+.share-btn.instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.share-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
 /* Responsive - Medium screens (1060px and below) */
 @media (max-width: 1060px) {
   h1 {
@@ -595,5 +677,40 @@ strong {
   .announcement-banner {
     font-size: 0.7rem;
     padding: 0.5rem 0.5rem;
+  }
+  
+  /* Share Section Mobile */
+  .share-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+  
+  .share-title {
+    font-size: 1rem;
+  }
+  
+  .share-link-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .share-link-input {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  
+  .btn-copy {
+    width: 100%;
+  }
+  
+  .share-buttons {
+    gap: 0.5rem;
+  }
+  
+  .share-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    flex: 1;
+    text-align: center;
   }
 }
