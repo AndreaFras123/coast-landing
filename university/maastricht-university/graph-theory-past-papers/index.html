@@ -116,8 +116,9 @@
       <div class="email-card">
         <div class="email-card-inner" id="email-card">
           <p class="header-text">Coming soon - join the waitlist for exclusive beta benefits & rewards</p>
-          <form class="email-form" id="email-form">
-            <input type="email" id="email-input" placeholder="Enter email ..." required>
+          <form class="email-form" id="email-form" action="https://formspree.io/f/xlgnlpae" method="POST">
+            <input type="email" id="email-input" name="email" placeholder="Enter email ..." required>
+            <input type="hidden" name="source" value="graph-theory-past-papers">
             <button type="submit" id="submit-btn">Save Me</button>
           </form>
           <p class="trust-text">We'll notify you when solutions are ready. No spam, ever.</p>
@@ -166,17 +167,31 @@
   </main>
 
   <script>
-    document.getElementById('email-form').addEventListener('submit', function(e) {
+    document.getElementById('email-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const btn = document.getElementById('submit-btn');
       const email = document.getElementById('email-input').value;
       btn.textContent = 'Saving...';
       btn.disabled = true;
-      setTimeout(function() {
-        document.getElementById('email-card').style.display = 'none';
-        document.getElementById('success-message').classList.add('show');
-        console.log('Email captured:', email);
-      }, 1000);
+      try {
+        const response = await fetch(this.action, {
+          method: 'POST',
+          body: new FormData(this),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          document.getElementById('email-card').style.display = 'none';
+          document.getElementById('success-message').classList.add('show');
+        } else {
+          alert('Oops! Something went wrong. Please try again.');
+          btn.textContent = 'Save Me';
+          btn.disabled = false;
+        }
+      } catch (err) {
+        alert('Oops! Something went wrong. Please try again.');
+        btn.textContent = 'Save Me';
+        btn.disabled = false;
+      }
     });
   </script>
 </body>
