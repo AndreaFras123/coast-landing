@@ -252,7 +252,7 @@ strong {
 
 .device-screen video {
   display: block;
-  height: 50vh;
+  height: 70vh;
   width: auto;
   max-width: 100%;
 }
@@ -307,43 +307,30 @@ strong {
   }
 }
 
-/* Phone frame responsive sizing */
+/* Mobile: full reel-style video, no phone frame */
 @media (max-width: 768px) {
-  .device-screen video {
-    height: 40vh;
-  }
-
   .device-frame {
-    padding: 8px 5px;
-    border-radius: 28px;
-  }
-
-  .device-screen {
-    border-radius: 20px;
+    display: block;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .device-bezel {
-    height: 12px;
-  }
-
-  .device-notch {
-    width: 40px;
-    height: 3px;
-  }
-}
-
-@media (max-width: 480px) {
-  .device-screen video {
-    height: 35vh;
-  }
-
-  .device-frame {
-    padding: 6px 4px;
-    border-radius: 24px;
+    display: none;
   }
 
   .device-screen {
-    border-radius: 18px;
+    border-radius: 12px;
+    background: transparent;
+    overflow: hidden;
+  }
+
+  .device-screen video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
   }
 }
 
