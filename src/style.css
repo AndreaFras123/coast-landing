@@ -277,6 +277,11 @@ strong {
   pointer-events: none;
 }
 
+.video-play-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .video-play-overlay svg {
   width: 22px;
   height: 22px;

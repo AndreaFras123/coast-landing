@@ -186,14 +186,48 @@ const heroVideo = document.getElementById('hero-video');
 const heroPlayBtn = document.getElementById('hero-play-btn');
 
 if (heroVideo && heroPlayBtn) {
-  // If video fails to autoplay, show play button
-  heroVideo.play().catch(() => {
+  // Show play button by default, hide only when actually playing
+  function showPlayBtn() {
     heroPlayBtn.classList.add('visible');
-  });
+  }
+
+  function hidePlayBtn() {
+    heroPlayBtn.classList.remove('visible');
+  }
+
+  // Listen for actual play/pause events
+  heroVideo.addEventListener('playing', hidePlayBtn);
+  heroVideo.addEventListener('pause', showPlayBtn);
+  heroVideo.addEventListener('ended', showPlayBtn);
+
+  // Attempt autoplay
+  const playPromise = heroVideo.play();
+  if (playPromise !== undefined) {
+    playPromise.then(() => {
+      // Autoplay started successfully
+      hidePlayBtn();
+    }).catch(() => {
+      // Autoplay blocked (common on iOS), show play button
+      showPlayBtn();
+    });
+  } else {
+    // Older browsers that don't return a promise
+    showPlayBtn();
+  }
+
+  // Also check after a short delay (iOS sometimes reports play but doesn't actually play)
+  setTimeout(() => {
+    if (heroVideo.paused) {
+      showPlayBtn();
+    }
+  }, 500);
 
   heroPlayBtn.addEventListener('click', () => {
-    heroVideo.play();
-    heroPlayBtn.classList.remove('visible');
+    heroVideo.play().then(() => {
+      hidePlayBtn();
+    }).catch(() => {
+      // Still can't play, keep button visible
+    });
   });
 }
 

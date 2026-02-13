@@ -217,6 +217,14 @@
   color: #fff;
 }
 
+.ui-showcase-section.dark-preview .showcase-device {
+  background: #1a1a2e;
+}
+
+.ui-showcase-section.dark-preview .showcase-screen {
+  background: #1a1a2e;
+}
+
 .showcase-tab {
   padding: 0.75rem 1.5rem;
   border: 1px solid #e0e0e0;
@@ -248,10 +256,10 @@
 
 .showcase-device {
   position: relative;
-  background: #1a1a2e;
+  background: #fff;
   border-radius: 16px;
   padding: 12px;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.15);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.1);
   overflow: hidden;
 }
 
@@ -261,6 +269,7 @@
   display: none;
   object-fit: contain;
   border-radius: 8px;
+  background: #fff;
 }
 
 .showcase-screen.active {
