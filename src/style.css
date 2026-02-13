@@ -309,7 +309,14 @@ strong {
 
 /* On mobile: strip device frame, show clean video */
 @media (max-width: 768px) {
+  .hero-video-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
   .device-frame {
+    width: auto;
+    max-width: 100%;
     background: none;
     box-shadow: none;
     border-radius: 0;
@@ -322,13 +329,16 @@ strong {
 
   .device-screen {
     margin: 0;
-    border-radius: 16px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
-    background: #000;
+    background: transparent;
   }
 
   .device-screen video {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 55vh;
     border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
   }
 }
 
@@ -643,7 +653,6 @@ strong {
   }
   
   .hero-video-wrapper {
-    max-width: 55%;
     margin: 0 auto;
   }
 
@@ -659,10 +668,6 @@ strong {
     display: block !important;
   }
   
-  .hero-video-wrapper {
-    max-width: 50%;
-    margin: 0 auto;
-  }
 }
 
 /* Responsive - Mobile */
@@ -749,11 +754,6 @@ strong {
     font-size: 0.9rem;
   }
   
-  .hero-video-wrapper {
-    max-width: 50%;
-    margin: 0 auto;
-  }
-
   /* Email Card */
   .email-section {
     padding: 1rem 0.75rem;
