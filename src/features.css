@@ -288,6 +288,7 @@
 .video-section-inner {
   max-width: 900px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .video-section h2 {
@@ -296,17 +297,22 @@
 
 .video-player-frame {
   position: relative;
+  display: inline-block;
   background: #1a1a2e;
-  border-radius: 16px;
-  padding: 12px;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.15);
+  padding: 10px 6px;
+  border-radius: 36px;
+  box-shadow: 
+    0 24px 80px rgba(0,0,0,0.15),
+    inset 0 0 0 1px rgba(255,255,255,0.05);
   overflow: hidden;
 }
 
 .video-player-frame video {
-  width: 100%;
-  border-radius: 8px;
   display: block;
+  height: 60vh;
+  width: auto;
+  max-width: 100%;
+  border-radius: 24px;
 }
 
 .video-big-play {
@@ -427,8 +433,13 @@
   }
 
   .video-player-frame {
-    border-radius: 12px;
-    padding: 8px;
+    padding: 8px 5px;
+    border-radius: 28px;
+  }
+
+  .video-player-frame video {
+    height: 50vh;
+    border-radius: 20px;
   }
 
   .video-big-play {

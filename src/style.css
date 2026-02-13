@@ -212,7 +212,7 @@ strong {
   line-height: 1.7;
 }
 
-/* Hero Video Device Frame */
+/* Hero Video - Phone Frame */
 .hero-video-wrapper {
   display: flex;
   align-items: center;
@@ -220,41 +220,41 @@ strong {
 }
 
 .device-frame {
-  width: 100%;
-  max-width: 560px;
+  display: inline-block;
   background: #1a1a2e;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.15);
+  padding: 10px 6px;
+  border-radius: 36px;
+  box-shadow: 
+    0 24px 80px rgba(0,0,0,0.15),
+    inset 0 0 0 1px rgba(255,255,255,0.05);
 }
 
 .device-bezel {
-  height: 32px;
+  height: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #1a1a2e;
 }
 
 .device-notch {
-  width: 80px;
-  height: 6px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 3px;
+  width: 50px;
+  height: 4px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 2px;
 }
 
 .device-screen {
   position: relative;
-  margin: 0 8px 8px;
-  border-radius: 8px;
   overflow: hidden;
+  border-radius: 24px;
   background: #000;
 }
 
 .device-screen video {
-  width: 100%;
   display: block;
-  border-radius: 8px;
+  height: 50vh;
+  width: auto;
+  max-width: 100%;
 }
 
 .video-play-overlay {
@@ -307,38 +307,43 @@ strong {
   }
 }
 
-/* On mobile: strip device frame, show clean video */
+/* Phone frame responsive sizing */
 @media (max-width: 768px) {
-  .hero-video-wrapper {
-    display: flex;
-    justify-content: center;
+  .device-screen video {
+    height: 40vh;
   }
 
   .device-frame {
-    width: auto;
-    max-width: 100%;
-    background: none;
-    box-shadow: none;
-    border-radius: 0;
-    overflow: visible;
-  }
-
-  .device-bezel {
-    display: none;
+    padding: 8px 5px;
+    border-radius: 28px;
   }
 
   .device-screen {
-    margin: 0;
-    background: transparent;
+    border-radius: 20px;
   }
 
+  .device-bezel {
+    height: 12px;
+  }
+
+  .device-notch {
+    width: 40px;
+    height: 3px;
+  }
+}
+
+@media (max-width: 480px) {
   .device-screen video {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    max-height: 55vh;
-    border-radius: 16px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+    height: 35vh;
+  }
+
+  .device-frame {
+    padding: 6px 4px;
+    border-radius: 24px;
+  }
+
+  .device-screen {
+    border-radius: 18px;
   }
 }
 
