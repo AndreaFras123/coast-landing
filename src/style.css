@@ -307,6 +307,31 @@ strong {
   }
 }
 
+/* On mobile: strip device frame, show clean video */
+@media (max-width: 768px) {
+  .device-frame {
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  .device-bezel {
+    display: none;
+  }
+
+  .device-screen {
+    margin: 0;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+    background: #000;
+  }
+
+  .device-screen video {
+    border-radius: 16px;
+  }
+}
+
 /* Trust Banner */
 .trust-banner {
   background-color: #F3F3F3;
@@ -618,18 +643,10 @@ strong {
   }
   
   .hero-video-wrapper {
-    max-width: 75%;
+    max-width: 55%;
     margin: 0 auto;
   }
 
-  .device-bezel {
-    height: 24px;
-  }
-
-  .device-notch {
-    width: 60px;
-    height: 5px;
-  }
 }
 
 /* Responsive - Small tablet / Large phone */
@@ -643,7 +660,7 @@ strong {
   }
   
   .hero-video-wrapper {
-    max-width: 65%;
+    max-width: 50%;
     margin: 0 auto;
   }
 }
@@ -666,8 +683,7 @@ strong {
   .hero,
   .email-section,
   .trust-banner,
-  .hero-content,
-  .hero-video-wrapper {
+  .hero-content {
     max-width: 100%;
     width: 100%;
     overflow-x: hidden;
@@ -734,31 +750,8 @@ strong {
   }
   
   .hero-video-wrapper {
-    width: 100%;
-    max-width: 80%;
+    max-width: 50%;
     margin: 0 auto;
-  }
-
-  .device-frame {
-    border-radius: 12px;
-  }
-
-  .device-bezel {
-    height: 18px;
-  }
-
-  .device-notch {
-    width: 48px;
-    height: 4px;
-  }
-
-  .device-screen {
-    margin: 0 5px 5px;
-    border-radius: 6px;
-  }
-
-  .device-screen video {
-    border-radius: 6px;
   }
 
   /* Email Card */
