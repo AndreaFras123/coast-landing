@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Blackbird-base.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Coast</title>
+    <meta name="description" content="Meet the team behind Coast. Built by students at Maastricht University who believe AI should learn from real exams, not just the internet.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="/src/footer.css">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .about-wrapper {
+        flex: 1;
+        width: 100%;
+      }
+
+      /* Hero */
+      .about-hero {
+        text-align: center;
+        padding: 6rem 2rem 4rem;
+        max-width: 820px;
+        margin: 0 auto;
+      }
+      .about-hero .label {
+        font-family: 'Nunito Sans', sans-serif;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #f5a623;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 1.5rem;
+      }
+      .about-hero h1 {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 800;
+        font-size: 3.2rem;
+        color: #1a1a2e;
+        line-height: 1.15;
+        margin-bottom: 1.5rem;
+      }
+      .about-hero .subtitle {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.2rem;
+        color: #666;
+        line-height: 1.7;
+        max-width: 650px;
+        margin: 0 auto;
+      }
+
+      /* Story Sections */
+      .story-section {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+      }
+      .story-section h2 {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 800;
+        font-size: 1.8rem;
+        color: #1a1a2e;
+        margin-bottom: 1.5rem;
+      }
+      .story-section p {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+      .story-section .highlight {
+        color: #1a1a2e;
+        font-weight: 600;
+      }
+
+      /* Divider */
+      .section-divider {
+        width: 60px;
+        height: 3px;
+        background: #f5a623;
+        margin: 0 auto;
+        border-radius: 2px;
+      }
+
+      /* Problem Banner */
+      .problem-banner {
+        background: #f9f9f9;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+      .problem-banner .inner {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .problem-banner h2 {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 800;
+        font-size: 1.8rem;
+        color: #1a1a2e;
+        margin-bottom: 1.5rem;
+      }
+      .problem-banner p {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+      .problem-banner .quote {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: #f5a623;
+        font-style: italic;
+        margin-top: 2rem;
+        padding: 0 1rem;
+      }
+
+      /* Team Section */
+      .team-section {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+      .team-section h2 {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 800;
+        font-size: 1.8rem;
+        color: #1a1a2e;
+        margin-bottom: 3rem;
+      }
+      .team-grid {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        flex-wrap: wrap;
+      }
+      .team-card {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 20px;
+        padding: 2.5rem 2rem;
+        width: 320px;
+        text-align: center;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        transition: transform 0.3s ease;
+      }
+      .team-card:hover {
+        transform: translateY(-4px);
+      }
+      .team-avatar {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #f5a623, #e09612);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 800;
+        font-size: 2rem;
+        color: white;
+      }
+      .team-card h3 {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 800;
+        font-size: 1.3rem;
+        color: #1a1a2e;
+        margin-bottom: 0.4rem;
+      }
+      .team-card .role {
+        font-family: 'Nunito Sans', sans-serif;
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: #f5a623;
+        margin-bottom: 1rem;
+      }
+      .team-card p {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Vision Section */
+      .vision-section {
+        background: #1a1a2e;
+        padding: 5rem 2rem;
+        text-align: center;
+      }
+      .vision-section .inner {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .vision-section h2 {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 800;
+        font-size: 1.8rem;
+        color: #fff;
+        margin-bottom: 1.5rem;
+      }
+      .vision-section p {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.1rem;
+        color: #ccc;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+      .vision-steps {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+      }
+      .vision-step {
+        text-align: center;
+        width: 180px;
+      }
+      .vision-step .step-number {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 800;
+        font-size: 2.5rem;
+        color: #f5a623;
+        margin-bottom: 0.5rem;
+      }
+      .vision-step .step-label {
+        font-family: 'Nunito Sans', sans-serif;
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: #ddd;
+      }
+
+      /* CTA Section */
+      .about-cta {
+        text-align: center;
+        padding: 5rem 2rem;
+        max-width: 650px;
+        margin: 0 auto;
+      }
+      .about-cta h2 {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 800;
+        font-size: 2rem;
+        color: #1a1a2e;
+        margin-bottom: 1rem;
+      }
+      .about-cta p {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 2rem;
+      }
+      .about-cta .cta-btn {
+        display: inline-block;
+        background: #f5a623;
+        color: white;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 700;
+        font-size: 1.15rem;
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(245, 166, 35, 0.3);
+        transition: all 0.3s ease;
+      }
+      .about-cta .cta-btn:hover {
+        background: #e09612;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(245, 166, 35, 0.4);
+      }
+
+      /* Mobile */
+      @media (max-width: 600px) {
+        .about-hero { padding: 4rem 1.5rem 3rem; }
+        .about-hero h1 { font-size: 2.2rem; }
+        .about-hero .subtitle { font-size: 1.05rem; }
+        .story-section { padding: 2.5rem 1.5rem; }
+        .story-section h2 { font-size: 1.5rem; }
+        .story-section p { font-size: 1rem; }
+        .problem-banner { padding: 3rem 1.5rem; }
+        .problem-banner h2 { font-size: 1.5rem; }
+        .problem-banner .quote { font-size: 1.1rem; }
+        .team-card { width: 100%; max-width: 340px; }
+        .team-grid { gap: 1.5rem; }
+        .vision-section { padding: 3.5rem 1.5rem; }
+        .vision-section h2 { font-size: 1.5rem; }
+        .vision-steps { gap: 1.5rem; }
+        .vision-step { width: 140px; }
+        .about-cta { padding: 3.5rem 1.5rem; }
+        .about-cta h2 { font-size: 1.6rem; }
+      }
+      @media (max-width: 480px) {
+        body { zoom: 1; }
+      }
+    </style>
+    <script defer src="https://va.vercel-scripts.com/v1/script.js"></script>
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "vbr4e0edei");
+    </script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="/"><img src="/logo.svg" alt="Coast Logo" class="logo-img" style="height: 60px;"></a>
+        </div>
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="/#features">Features</a>
+          <a href="/" class="btn btn-primary">Join Beta</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="about-wrapper">
+      <!-- Hero -->
+      <div class="about-hero">
+        <p class="label">Our Story</p>
+        <h1>Built by students who were tired of studying the wrong way</h1>
+        <p class="subtitle">Coast was born at Maastricht University from a simple frustration: everyone studies from past papers, so why doesn't our technology?</p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- The Problem -->
+      <div class="problem-banner">
+        <div class="inner">
+          <h2>The Problem We Saw</h2>
+          <p>Every student knows the drill. The exam is in two weeks, you open ChatGPT and ask it to explain a concept. It gives you a generic answer. Textbook definitions. No context about your specific course, your professor's style, or what actually shows up on the exam.</p>
+          <p>Meanwhile, the real gold sits right there. Past papers, marking schemes, the exact patterns your lecturers repeat. All of it scattered in group chats, outdated drives, and dusty filing cabinets.</p>
+          <p class="quote">"Everyone studies from past papers. There's a reason. So why aren't our AI tools using this ground truth?"</p>
+        </div>
+      </div>
+
+      <!-- The Origin -->
+      <section class="story-section">
+        <h2>How It Started</h2>
+        <p>It started with a conversation over the summer. <span class="highlight">Rio</span> came to <span class="highlight">Andrea</span> with an idea. What if we could build something that actually understood how students prepare for exams? Not another generic AI chatbot, but a system built on real exam data.</p>
+        <p>Andrea gave it some thought but wasn't ready to commit. Then September came, a new semester started, and the same old cycle repeated: scrambling for past papers, finding outdated solutions, guessing what would be on the exam. Seeing it from a different perspective, it clicked. This wasn't just an idea. It was something that <em>needed</em> to exist.</p>
+        <p>That's when Coast was born.</p>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- What We're Building -->
+      <section class="story-section">
+        <h2>What We're Building</h2>
+        <p>Coast takes the thing every student already does, studying from past papers, and supercharges it with AI. But not any AI. Our system is <span class="highlight">grounded in real exam data</span>: your university's past papers, verified marking schemes, and structured course content.</p>
+        <p>We package this into an experience that actually makes studying engaging:</p>
+        <p><span class="highlight">Smart Notes</span> are generated from your actual lecture content and structured around what really gets examined.</p>
+        <p><span class="highlight">Past Paper Quizzes</span> are matched to your notes, so you practice exactly what you've learned, with questions pulled from real exams.</p>
+        <p><span class="highlight">Gamified Leaderboards</span> let you compete with your classmates, build study streaks, collect rewards. Studying shouldn't feel like a chore.</p>
+        <p>And the long-term vision? Generate exam-level questions for <em>any</em> level. University, IB, Cambridge, SAT. For any course, anywhere in the world.</p>
+      </section>
+
+      <!-- Team -->
+      <div class="team-section">
+        <h2>The Team</h2>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar">AF</div>
+            <h3>Andrea Fraschetti</h3>
+            <p class="role">Co-Founder</p>
+            <p>3rd year Data Science at Maastricht University. Currently writing his thesis on adaptive AI tutors using different conversational guidance styles. Turns research into product.</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">RM</div>
+            <h3>Rio Mauss</h3>
+            <p class="role">Co-Founder</p>
+            <p>Former International Business student at Maastricht. Dropped out in his 2nd year to pursue building what he saw students needed. The one who started the conversation that became Coast.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vision -->
+      <div class="vision-section">
+        <div class="inner">
+          <h2>Where We're Going</h2>
+          <p>We're starting at Maastricht University because it's where we study and where we can validate every detail. But Coast isn't a Maastricht product. It's a student product. Our roadmap is clear:</p>
+          <div class="vision-steps">
+            <div class="vision-step">
+              <div class="step-number">01</div>
+              <div class="step-label">Maastricht University</div>
+            </div>
+            <div class="vision-step">
+              <div class="step-number">02</div>
+              <div class="step-label">Dutch Universities</div>
+            </div>
+            <div class="vision-step">
+              <div class="step-number">03</div>
+              <div class="step-label">European Universities</div>
+            </div>
+            <div class="vision-step">
+              <div class="step-number">04</div>
+              <div class="step-label">Every Exam, Everywhere</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="about-cta">
+        <h2>Want to be part of what we're building?</h2>
+        <p>Join the waitlist and help shape the future of exam prep. Early users get exclusive beta access and rewards.</p>
+        <a href="/" class="cta-btn">Join the Waitlist</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-bottom" style="border:none; padding-top:0;">
+          <p>© 2026 Coast. Built by students, for students.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

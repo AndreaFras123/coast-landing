@@ -212,17 +212,86 @@ strong {
   line-height: 1.7;
 }
 
-/* Hero Image Placeholder */
-.image-placeholder {
-  width: 100%;
-  aspect-ratio: 4/3;
-  background-color: #ddd;
-  border-radius: 20px;
+/* Hero Video Device Frame */
+.hero-video-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #777;
-  font-weight: bold;
+}
+
+.device-frame {
+  width: 100%;
+  max-width: 560px;
+  background: #1a1a2e;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.15);
+}
+
+.device-bezel {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a2e;
+}
+
+.device-notch {
+  width: 80px;
+  height: 6px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+}
+
+.device-screen {
+  position: relative;
+  margin: 0 8px 8px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+}
+
+.device-screen video {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.video-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  background: rgba(245, 166, 35, 0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(245,166,35,0.4);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.video-play-overlay svg {
+  width: 22px;
+  height: 22px;
+  color: #fff;
+  margin-left: 2px;
+}
+
+.video-play-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.video-play-overlay:hover {
+  background: rgba(245, 166, 35, 1);
+  transform: translate(-50%, -50%) scale(1.08);
 }
 
 /* Trust Banner */
@@ -358,6 +427,51 @@ strong {
   box-shadow: 0 2px 10px rgba(245, 166, 35, 0.3);
 }
 
+/* Mobile Hero Signup - hidden on desktop, shown on mobile */
+.mobile-hero-signup {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-hero-signup {
+    display: block;
+    margin-top: 1.5rem;
+  }
+  
+  .mobile-signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    padding: 1rem;
+  }
+  
+  .mobile-signup-form input[type="email"] {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    outline: none;
+    min-width: 0;
+  }
+  
+  .mobile-signup-form input[type="email"]:focus {
+    border-color: var(--color-primary);
+  }
+  
+  .mobile-signup-form .btn-submit {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+}
+
 /* Share Section (shown after signup) */
 .share-section {
   margin-top: 2rem;
@@ -491,7 +605,7 @@ strong {
   }
   
   /* Make bird illustration smaller */
-  .hero-image {
+  .hero-video-wrapper {
     max-width: 60%;
     margin: 0 auto;
   }
@@ -508,7 +622,7 @@ strong {
   }
   
   /* Smaller bird illustration */
-  .hero-image {
+  .hero-video-wrapper {
     max-width: 50%;
     margin: 0 auto;
   }
@@ -533,7 +647,7 @@ strong {
   .email-section,
   .trust-banner,
   .hero-content,
-  .hero-image {
+  .hero-video-wrapper {
     max-width: 100%;
     width: 100%;
     overflow-x: hidden;
@@ -580,7 +694,7 @@ strong {
   }
   
   /* Smaller bird illustration on mobile */
-  .hero-image {
+  .hero-video-wrapper {
     max-width: 70%;
     margin: 0 auto;
   }
@@ -605,15 +719,12 @@ strong {
     font-size: 0.9rem;
   }
   
-  .hero-image {
+  .hero-video-wrapper {
     width: 100%;
     max-width: 100%;
   }
   
-  .hero-img {
-    max-width: 100%;
-    height: auto;
-  }
+
   
   /* Email Card */
   .email-section {

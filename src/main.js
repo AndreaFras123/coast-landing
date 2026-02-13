@@ -180,6 +180,99 @@ forms.forEach(form => {
   });
 });
 
+// ========== HERO VIDEO ==========
+
+const heroVideo = document.getElementById('hero-video');
+const heroPlayBtn = document.getElementById('hero-play-btn');
+
+if (heroVideo && heroPlayBtn) {
+  // If video fails to autoplay, show play button
+  heroVideo.play().catch(() => {
+    heroPlayBtn.classList.add('visible');
+  });
+
+  heroPlayBtn.addEventListener('click', () => {
+    heroVideo.play();
+    heroPlayBtn.classList.remove('visible');
+  });
+}
+
+// ========== UI SHOWCASE TABS ==========
+
+const showcaseTabs = document.querySelectorAll('.showcase-tab');
+const showcaseScreens = document.querySelectorAll('.showcase-screen');
+
+if (showcaseTabs.length > 0) {
+  showcaseTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-screen');
+
+      showcaseTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      showcaseScreens.forEach(screen => {
+        screen.classList.toggle('active', screen.getAttribute('data-screen') === target);
+      });
+    });
+  });
+}
+
+// ========== THEME TOGGLE (showcase dark/light) ==========
+
+const themeToggle = document.getElementById('theme-toggle');
+const showcaseSection = document.querySelector('.ui-showcase-section');
+let isDarkPreview = false;
+
+if (themeToggle && showcaseSection) {
+  themeToggle.addEventListener('click', () => {
+    isDarkPreview = !isDarkPreview;
+    themeToggle.classList.toggle('dark', isDarkPreview);
+    showcaseSection.classList.toggle('dark-preview', isDarkPreview);
+
+    // Swap images for screens that have dark variants
+    showcaseScreens.forEach(screen => {
+      const lightSrc = screen.getAttribute('data-light');
+      const darkSrc = screen.getAttribute('data-dark');
+
+      if (isDarkPreview && darkSrc) {
+        screen.src = darkSrc;
+      } else if (lightSrc) {
+        screen.src = lightSrc;
+      }
+    });
+  });
+}
+
+// ========== FULL VIDEO SECTION ==========
+
+const fullVideo = document.getElementById('full-video');
+const fullVideoPlay = document.getElementById('full-video-play');
+
+if (fullVideo && fullVideoPlay) {
+  fullVideoPlay.addEventListener('click', () => {
+    fullVideo.play();
+    fullVideoPlay.classList.add('hidden');
+  });
+
+  fullVideo.addEventListener('pause', () => {
+    fullVideoPlay.classList.remove('hidden');
+  });
+
+  fullVideo.addEventListener('ended', () => {
+    fullVideoPlay.classList.remove('hidden');
+  });
+
+  // Allow clicking video to pause/play
+  fullVideo.addEventListener('click', () => {
+    if (fullVideo.paused) {
+      fullVideo.play();
+      fullVideoPlay.classList.add('hidden');
+    } else {
+      fullVideo.pause();
+    }
+  });
+}
+
 // ========== FAQ ACCORDION ==========
 
 const faqCategories = document.querySelectorAll('.faq-category');
