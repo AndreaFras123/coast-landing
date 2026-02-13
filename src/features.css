@@ -259,7 +259,7 @@
   background: #fff;
   border-radius: 16px;
   padding: 12px;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
   overflow: hidden;
 }
 
@@ -267,9 +267,10 @@
   width: 100%;
   height: auto;
   display: none;
-  object-fit: contain;
   border-radius: 8px;
   background: #fff;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .showcase-screen.active {

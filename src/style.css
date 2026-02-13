@@ -289,14 +289,22 @@ strong {
   margin-left: 2px;
 }
 
-.video-play-overlay.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-
 .video-play-overlay:hover {
   background: rgba(245, 166, 35, 1);
   transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* On touch devices / mobile, always show play button via CSS */
+@media (max-width: 768px), (hover: none) {
+  .video-play-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .video-play-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 /* Trust Banner */

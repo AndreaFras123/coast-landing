@@ -186,13 +186,14 @@ const heroVideo = document.getElementById('hero-video');
 const heroPlayBtn = document.getElementById('hero-play-btn');
 
 if (heroVideo && heroPlayBtn) {
-  // Show play button by default, hide only when actually playing
   function showPlayBtn() {
     heroPlayBtn.classList.add('visible');
+    heroPlayBtn.classList.remove('hidden');
   }
 
   function hidePlayBtn() {
     heroPlayBtn.classList.remove('visible');
+    heroPlayBtn.classList.add('hidden');
   }
 
   // Listen for actual play/pause events
@@ -203,31 +204,27 @@ if (heroVideo && heroPlayBtn) {
   // Attempt autoplay
   const playPromise = heroVideo.play();
   if (playPromise !== undefined) {
-    playPromise.then(() => {
-      // Autoplay started successfully
-      hidePlayBtn();
-    }).catch(() => {
-      // Autoplay blocked (common on iOS), show play button
-      showPlayBtn();
-    });
+    playPromise.then(hidePlayBtn).catch(showPlayBtn);
   } else {
-    // Older browsers that don't return a promise
     showPlayBtn();
   }
 
-  // Also check after a short delay (iOS sometimes reports play but doesn't actually play)
+  // iOS fallback: check again after delay
   setTimeout(() => {
-    if (heroVideo.paused) {
-      showPlayBtn();
-    }
+    if (heroVideo.paused) showPlayBtn();
   }, 500);
 
   heroPlayBtn.addEventListener('click', () => {
-    heroVideo.play().then(() => {
-      hidePlayBtn();
-    }).catch(() => {
-      // Still can't play, keep button visible
-    });
+    heroVideo.play().then(hidePlayBtn).catch(() => {});
+  });
+
+  // Also allow tapping the video itself to pause/play
+  heroVideo.addEventListener('click', () => {
+    if (heroVideo.paused) {
+      heroVideo.play().then(hidePlayBtn).catch(() => {});
+    } else {
+      heroVideo.pause();
+    }
   });
 }
 
