@@ -604,10 +604,18 @@ strong {
     padding: 2rem;
   }
   
-  /* Make bird illustration smaller */
   .hero-video-wrapper {
-    max-width: 60%;
+    max-width: 75%;
     margin: 0 auto;
+  }
+
+  .device-bezel {
+    height: 24px;
+  }
+
+  .device-notch {
+    width: 60px;
+    height: 5px;
   }
 }
 
@@ -621,9 +629,8 @@ strong {
     display: block !important;
   }
   
-  /* Smaller bird illustration */
   .hero-video-wrapper {
-    max-width: 50%;
+    max-width: 65%;
     margin: 0 auto;
   }
 }
@@ -693,15 +700,9 @@ strong {
     display: block !important;
   }
   
-  /* Smaller bird illustration on mobile */
-  .hero-video-wrapper {
-    max-width: 70%;
-    margin: 0 auto;
-  }
-  
   .hero {
     padding: 1.5rem 1rem;
-    gap: 2rem;
+    gap: 1.5rem;
   }
   
   .feature-list li {
@@ -721,11 +722,32 @@ strong {
   
   .hero-video-wrapper {
     width: 100%;
-    max-width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
   }
-  
 
-  
+  .device-frame {
+    border-radius: 12px;
+  }
+
+  .device-bezel {
+    height: 18px;
+  }
+
+  .device-notch {
+    width: 48px;
+    height: 4px;
+  }
+
+  .device-screen {
+    margin: 0 5px 5px;
+    border-radius: 6px;
+  }
+
+  .device-screen video {
+    border-radius: 6px;
+  }
+
   /* Email Card */
   .email-section {
     padding: 1rem 0.75rem;

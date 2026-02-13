@@ -252,26 +252,19 @@
   border-radius: 16px;
   padding: 12px;
   box-shadow: 0 24px 80px rgba(0,0,0,0.15);
-  aspect-ratio: 16 / 10;
   overflow: hidden;
 }
 
 .showcase-screen {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  width: calc(100% - 24px);
-  height: calc(100% - 24px);
-  object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: none;
+  object-fit: contain;
   border-radius: 8px;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
 }
 
 .showcase-screen.active {
-  opacity: 1;
-  pointer-events: auto;
+  display: block;
 }
 
 /* ========== VIDEO SECTION ========== */
@@ -416,10 +409,6 @@
   }
 
   .showcase-screen {
-    top: 8px;
-    left: 8px;
-    width: calc(100% - 16px);
-    height: calc(100% - 16px);
     border-radius: 6px;
   }
 
