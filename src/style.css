@@ -309,11 +309,19 @@ strong {
 
 /* Mobile: full reel-style video, no phone frame */
 @media (max-width: 768px) {
+  .hero {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .hero-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .hero-video-wrapper {
-    width: calc(100% + 4rem) !important;
-    max-width: none !important;
-    margin-left: -2rem !important;
-    margin-right: -2rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
     overflow: hidden;
   }
 
@@ -334,6 +342,7 @@ strong {
     border-radius: 0 !important;
     background: transparent !important;
     overflow: hidden;
+    width: 100% !important;
   }
 
   .device-screen video {
@@ -346,10 +355,9 @@ strong {
 }
 
 @media (max-width: 480px) {
-  .hero-video-wrapper {
-    width: calc(100% + 2rem) !important;
-    margin-left: -1rem !important;
-    margin-right: -1rem !important;
+  .hero-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 

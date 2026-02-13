@@ -57,8 +57,8 @@
 .step-icon {
   width: 72px;
   height: 72px;
-  background: linear-gradient(135deg, rgba(245,166,35,0.1), rgba(245,166,35,0.05));
-  border: 1px solid rgba(245,166,35,0.2);
+  background-color: #fef4e2;
+  border: 1px solid #fde4b0;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -317,15 +317,29 @@
 
 /* Mobile: full reel-style for bottom video too */
 @media (max-width: 768px) {
+  .video-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .video-section-inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .video-section h2,
+  .video-section .section-label {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .video-player-frame {
     display: block !important;
     background: none !important;
     padding: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
-    width: calc(100% + 3rem) !important;
-    margin-left: -1.5rem !important;
-    margin-right: -1.5rem !important;
+    width: 100% !important;
   }
 
   .video-player-frame video {
@@ -333,14 +347,6 @@
     height: auto !important;
     max-width: 100% !important;
     border-radius: 0 !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .video-player-frame {
-    width: calc(100% + 2rem) !important;
-    margin-left: -1rem !important;
-    margin-right: -1rem !important;
   }
 }
 
@@ -419,23 +425,18 @@
   }
 
   .showcase-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 0.4rem;
-    padding: 0 0.5rem;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .showcase-tabs::-webkit-scrollbar {
-    display: none;
+    padding: 0;
+    width: 100%;
   }
 
   .showcase-tab {
-    padding: 0.6rem 1rem;
-    font-size: 0.85rem;
-    flex-shrink: 0;
+    padding: 0.6rem 0.5rem;
+    font-size: 0.8rem;
+    text-align: center;
+    white-space: nowrap;
   }
 
   .theme-toggle {
@@ -515,8 +516,8 @@
   }
 
   .showcase-tab {
-    padding: 0.5rem 0.85rem;
-    font-size: 0.8rem;
+    padding: 0.5rem 0.3rem;
+    font-size: 0.75rem;
   }
 
   .video-section {
