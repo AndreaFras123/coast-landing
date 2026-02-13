@@ -317,26 +317,30 @@
 
 /* Mobile: full reel-style for bottom video too */
 @media (max-width: 768px) {
-  .video-section-inner {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin-left: calc(-50vw + 50%) !important;
-    padding: 2rem 0 !important;
-  }
-
   .video-player-frame {
     display: block !important;
     background: none !important;
     padding: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
-    width: 100% !important;
+    width: calc(100% + 3rem) !important;
+    margin-left: -1.5rem !important;
+    margin-right: -1.5rem !important;
   }
 
   .video-player-frame video {
     width: 100% !important;
     height: auto !important;
+    max-width: 100% !important;
     border-radius: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-player-frame {
+    width: calc(100% + 2rem) !important;
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
   }
 }
 
