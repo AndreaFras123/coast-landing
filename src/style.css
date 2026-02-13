@@ -351,6 +351,8 @@ strong {
     max-width: 100% !important;
     border-radius: 0 !important;
     display: block;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
   }
 }
 
