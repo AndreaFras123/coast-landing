@@ -309,28 +309,38 @@ strong {
 
 /* Mobile: full reel-style video, no phone frame */
 @media (max-width: 768px) {
+  .hero-video-wrapper {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    overflow: hidden;
+  }
+
   .device-frame {
-    display: block;
-    background: none;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
+    display: block !important;
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    width: 100% !important;
   }
 
   .device-bezel {
-    display: none;
+    display: none !important;
   }
 
   .device-screen {
-    border-radius: 12px;
-    background: transparent;
+    border-radius: 0 !important;
+    background: transparent !important;
     overflow: hidden;
   }
 
   .device-screen video {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
+    width: 100% !important;
+    height: auto !important;
+    max-width: none !important;
+    border-radius: 0 !important;
+    display: block;
   }
 }
 
