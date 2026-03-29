@@ -8,26 +8,66 @@
     <meta name="description" content="Meet the team behind Coast. Built by students at Maastricht University who believe AI should learn from real exams, not just the internet.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/src/style.css">
-    <link rel="stylesheet" href="/src/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+      *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { font-size: 16px; scroll-behavior: smooth; }
       body {
+        font-family: 'Nunito Sans', sans-serif;
+        background: #ffffff;
+        color: #333;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
       }
-      .about-wrapper {
-        flex: 1;
-        width: 100%;
+      h1,h2,h3,h4 { font-family: 'Nunito', sans-serif; font-weight: 800; line-height: 1.15; }
+      a { color: #D4A843; text-decoration: none; transition: color 0.15s; }
+      a:hover { color: #E8C05A; }
+      img { max-width: 100%; display: block; }
+
+      /* ========== NAVBAR (White) ========== */
+      .navbar {
+        position: sticky; top: 0; z-index: 1000;
+        background: rgba(255,255,255,0.92);
+        backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+      }
+      .nav-inner {
+        max-width: 1200px; margin: 0 auto;
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0.85rem 2rem;
+      }
+      .nav-logo { display: flex; align-items: center; }
+      .nav-logo-img { height: 44px; width: auto; }
+      .nav-links { display: flex; gap: 2rem; }
+      .nav-links a {
+        font-size: 0.9rem; font-weight: 600; color: #666;
+        text-decoration: none; transition: color 0.2s;
+      }
+      .nav-links a:hover { color: #1a1a2e; }
+      .nav-cta {
+        font-family: 'Nunito', sans-serif;
+        font-size: 0.85rem; font-weight: 700;
+        padding: 0.55rem 1.4rem;
+        background: #D4A843; color: #fff;
+        border-radius: 100px; text-decoration: none;
+        transition: all 0.2s;
+      }
+      .nav-cta:hover { background: #E8C05A; color: #fff; box-shadow: 0 4px 16px rgba(212,168,67,0.25); transform: translateY(-1px); }
+      .nav-hamburger {
+        display: none; background: none; border: none; cursor: pointer;
+        flex-direction: column; gap: 5px; padding: 4px;
+      }
+      .nav-hamburger span {
+        display: block; width: 22px; height: 2px; background: #1a1a2e;
+        border-radius: 2px; transition: all 0.3s;
       }
 
-      /* Hero */
+      .about-wrapper { flex: 1; width: 100%; }
+
+      /* ========== HERO ========== */
       .about-hero {
         text-align: center;
         padding: 6rem 2rem 4rem;
@@ -35,277 +75,150 @@
         margin: 0 auto;
       }
       .about-hero .label {
-        font-family: 'Nunito Sans', sans-serif;
-        font-weight: 600;
-        font-size: 0.9rem;
-        color: #f5a623;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 1.5rem;
+        font-weight: 700; font-size: 0.78rem;
+        color: #D4A843; text-transform: uppercase;
+        letter-spacing: 0.12em; margin-bottom: 1.25rem;
       }
       .about-hero h1 {
-        font-family: 'Nunito', sans-serif;
-        font-weight: 800;
-        font-size: 3.2rem;
-        color: #1a1a2e;
-        line-height: 1.15;
-        margin-bottom: 1.5rem;
+        font-size: 3.2rem; color: #1a1a2e;
+        line-height: 1.15; margin-bottom: 1.5rem;
       }
       .about-hero .subtitle {
-        font-family: 'Nunito Sans', sans-serif;
-        font-size: 1.2rem;
-        color: #666;
-        line-height: 1.7;
-        max-width: 650px;
-        margin: 0 auto;
+        font-size: 1.15rem; color: #666;
+        line-height: 1.8; max-width: 650px; margin: 0 auto;
       }
 
-      /* Story Sections */
+      /* ========== SECTIONS ========== */
+      .section-divider {
+        width: 60px; height: 3px;
+        background: #D4A843; margin: 0 auto; border-radius: 2px;
+      }
+
       .story-section {
-        max-width: 760px;
-        margin: 0 auto;
-        padding: 3rem 2rem;
+        max-width: 760px; margin: 0 auto; padding: 3rem 2rem;
       }
       .story-section h2 {
-        font-family: 'Nunito', sans-serif;
-        font-weight: 800;
-        font-size: 1.8rem;
-        color: #1a1a2e;
-        margin-bottom: 1.5rem;
+        font-size: 1.8rem; color: #1a1a2e; margin-bottom: 1.5rem;
       }
       .story-section p {
-        font-family: 'Nunito Sans', sans-serif;
-        font-size: 1.1rem;
-        color: #555;
-        line-height: 1.8;
-        margin-bottom: 1.5rem;
+        font-size: 1.05rem; color: #555;
+        line-height: 1.85; margin-bottom: 1.5rem;
       }
-      .story-section .highlight {
-        color: #1a1a2e;
-        font-weight: 600;
-      }
+      .story-section .highlight { color: #1a1a2e; font-weight: 600; }
 
-      /* Divider */
-      .section-divider {
-        width: 60px;
-        height: 3px;
-        background: #f5a623;
-        margin: 0 auto;
-        border-radius: 2px;
-      }
-
-      /* Problem Banner */
       .problem-banner {
-        background: #f9f9f9;
-        padding: 4rem 2rem;
-        text-align: center;
+        background: #f9f9f9; padding: 4rem 2rem; text-align: center;
       }
-      .problem-banner .inner {
-        max-width: 700px;
-        margin: 0 auto;
-      }
-      .problem-banner h2 {
-        font-family: 'Nunito', sans-serif;
-        font-weight: 800;
-        font-size: 1.8rem;
-        color: #1a1a2e;
-        margin-bottom: 1.5rem;
-      }
-      .problem-banner p {
-        font-family: 'Nunito Sans', sans-serif;
-        font-size: 1.1rem;
-        color: #555;
-        line-height: 1.8;
-        margin-bottom: 1rem;
-      }
+      .problem-banner .inner { max-width: 700px; margin: 0 auto; }
+      .problem-banner h2 { font-size: 1.8rem; color: #1a1a2e; margin-bottom: 1.5rem; }
+      .problem-banner p { font-size: 1.05rem; color: #555; line-height: 1.85; margin-bottom: 1rem; }
       .problem-banner .quote {
         font-family: 'Nunito', sans-serif;
-        font-weight: 700;
-        font-size: 1.3rem;
-        color: #f5a623;
-        font-style: italic;
-        margin-top: 2rem;
-        padding: 0 1rem;
+        font-weight: 700; font-size: 1.2rem;
+        color: #D4A843; font-style: italic;
+        margin-top: 2rem; padding: 0 1rem;
       }
 
-      /* Team Section */
+      /* ========== TEAM ========== */
       .team-section {
-        max-width: 860px;
-        margin: 0 auto;
-        padding: 4rem 2rem;
-        text-align: center;
+        max-width: 860px; margin: 0 auto;
+        padding: 4rem 2rem; text-align: center;
       }
-      .team-section h2 {
-        font-family: 'Nunito', sans-serif;
-        font-weight: 800;
-        font-size: 1.8rem;
-        color: #1a1a2e;
-        margin-bottom: 3rem;
-      }
-      .team-grid {
-        display: flex;
-        justify-content: center;
-        gap: 3rem;
-        flex-wrap: wrap;
-      }
+      .team-section h2 { font-size: 1.8rem; color: #1a1a2e; margin-bottom: 3rem; }
+      .team-grid { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
       .team-card {
-        background: #fff;
-        border: 1px solid #eee;
-        border-radius: 20px;
-        padding: 2.5rem 2rem;
-        width: 320px;
-        text-align: center;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-        transition: transform 0.3s ease;
+        background: #fff; border: 1px solid #eee;
+        border-radius: 20px; padding: 2.5rem 2rem;
+        width: 320px; text-align: center;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+        transition: transform 0.2s;
       }
-      .team-card:hover {
-        transform: translateY(-4px);
-      }
+      .team-card:hover { transform: translateY(-4px); }
       .team-avatar {
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #f5a623, #e09612);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width: 90px; height: 90px; border-radius: 50%;
+        background: linear-gradient(135deg, #D4A843, #E8C05A);
+        display: flex; align-items: center; justify-content: center;
         margin: 0 auto 1.5rem;
         font-family: 'Nunito', sans-serif;
-        font-weight: 800;
-        font-size: 2rem;
-        color: white;
+        font-weight: 800; font-size: 2rem; color: white;
       }
-      .team-card h3 {
-        font-family: 'Nunito', sans-serif;
-        font-weight: 800;
-        font-size: 1.3rem;
-        color: #1a1a2e;
-        margin-bottom: 0.4rem;
-      }
+      .team-card h3 { font-size: 1.25rem; color: #1a1a2e; margin-bottom: 0.3rem; }
       .team-card .role {
-        font-family: 'Nunito Sans', sans-serif;
-        font-weight: 600;
-        font-size: 0.95rem;
-        color: #f5a623;
-        margin-bottom: 1rem;
+        font-weight: 600; font-size: 0.9rem;
+        color: #D4A843; margin-bottom: 1rem;
       }
-      .team-card p {
-        font-family: 'Nunito Sans', sans-serif;
-        font-size: 0.95rem;
-        color: #666;
-        line-height: 1.6;
-      }
+      .team-card p { font-size: 0.92rem; color: #666; line-height: 1.65; }
 
-      /* Vision Section */
+      /* ========== VISION ========== */
       .vision-section {
-        background: #1a1a2e;
-        padding: 5rem 2rem;
-        text-align: center;
+        background: #1a1a2e; padding: 5rem 2rem; text-align: center;
       }
-      .vision-section .inner {
-        max-width: 700px;
-        margin: 0 auto;
-      }
-      .vision-section h2 {
-        font-family: 'Nunito', sans-serif;
-        font-weight: 800;
-        font-size: 1.8rem;
-        color: #fff;
-        margin-bottom: 1.5rem;
-      }
-      .vision-section p {
-        font-family: 'Nunito Sans', sans-serif;
-        font-size: 1.1rem;
-        color: #ccc;
-        line-height: 1.8;
-        margin-bottom: 1.5rem;
-      }
+      .vision-section .inner { max-width: 700px; margin: 0 auto; }
+      .vision-section h2 { font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; }
+      .vision-section p { font-size: 1.05rem; color: #ccc; line-height: 1.85; margin-bottom: 1.5rem; }
       .vision-steps {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 3rem;
-        flex-wrap: wrap;
+        display: flex; justify-content: center; gap: 2rem;
+        margin-top: 3rem; flex-wrap: wrap;
       }
-      .vision-step {
-        text-align: center;
-        width: 180px;
-      }
+      .vision-step { text-align: center; width: 180px; }
       .vision-step .step-number {
         font-family: 'Nunito', sans-serif;
-        font-weight: 800;
-        font-size: 2.5rem;
-        color: #f5a623;
+        font-weight: 800; font-size: 2.5rem; color: #D4A843;
         margin-bottom: 0.5rem;
       }
-      .vision-step .step-label {
-        font-family: 'Nunito Sans', sans-serif;
-        font-weight: 600;
-        font-size: 0.95rem;
-        color: #ddd;
-      }
+      .vision-step .step-label { font-weight: 600; font-size: 0.95rem; color: #ddd; }
 
-      /* CTA Section */
+      /* ========== CTA ========== */
       .about-cta {
-        text-align: center;
-        padding: 5rem 2rem;
-        max-width: 650px;
-        margin: 0 auto;
+        text-align: center; padding: 5rem 2rem;
+        max-width: 650px; margin: 0 auto;
       }
-      .about-cta h2 {
-        font-family: 'Nunito', sans-serif;
-        font-weight: 800;
-        font-size: 2rem;
-        color: #1a1a2e;
-        margin-bottom: 1rem;
-      }
-      .about-cta p {
-        font-family: 'Nunito Sans', sans-serif;
-        font-size: 1.1rem;
-        color: #666;
-        margin-bottom: 2rem;
-      }
+      .about-cta h2 { font-size: 2rem; color: #1a1a2e; margin-bottom: 1rem; }
+      .about-cta p { font-size: 1.05rem; color: #666; margin-bottom: 2rem; }
       .about-cta .cta-btn {
         display: inline-block;
-        background: #f5a623;
-        color: white;
+        background: #D4A843; color: white;
         font-family: 'Nunito', sans-serif;
-        font-weight: 700;
-        font-size: 1.15rem;
-        padding: 1rem 2.5rem;
-        border-radius: 50px;
-        text-decoration: none;
-        box-shadow: 0 4px 15px rgba(245, 166, 35, 0.3);
-        transition: all 0.3s ease;
+        font-weight: 700; font-size: 1.1rem;
+        padding: 1rem 2.5rem; border-radius: 100px;
+        box-shadow: 0 4px 16px rgba(212,168,67,0.25);
+        transition: all 0.2s;
       }
       .about-cta .cta-btn:hover {
-        background: #e09612;
+        background: #E8C05A; color: white;
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(245, 166, 35, 0.4);
+        box-shadow: 0 6px 24px rgba(212,168,67,0.35);
       }
 
-      /* Mobile */
-      @media (max-width: 600px) {
+      /* ========== FOOTER ========== */
+      .site-footer {
+        background: #fafafa; border-top: 1px solid #eee;
+        padding: 2rem; text-align: center;
+      }
+      .site-footer p { font-size: 0.82rem; color: #999; }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .nav-hamburger { display: flex; }
+        .nav-links.open {
+          display: flex; flex-direction: column;
+          position: absolute; top: 100%; left: 0; right: 0;
+          background: #fff; border-bottom: 1px solid #eee;
+          padding: 1.5rem 2rem; gap: 1rem;
+        }
         .about-hero { padding: 4rem 1.5rem 3rem; }
         .about-hero h1 { font-size: 2.2rem; }
-        .about-hero .subtitle { font-size: 1.05rem; }
-        .story-section { padding: 2.5rem 1.5rem; }
-        .story-section h2 { font-size: 1.5rem; }
-        .story-section p { font-size: 1rem; }
-        .problem-banner { padding: 3rem 1.5rem; }
-        .problem-banner h2 { font-size: 1.5rem; }
-        .problem-banner .quote { font-size: 1.1rem; }
         .team-card { width: 100%; max-width: 340px; }
-        .team-grid { gap: 1.5rem; }
-        .vision-section { padding: 3.5rem 1.5rem; }
-        .vision-section h2 { font-size: 1.5rem; }
         .vision-steps { gap: 1.5rem; }
         .vision-step { width: 140px; }
-        .about-cta { padding: 3.5rem 1.5rem; }
-        .about-cta h2 { font-size: 1.6rem; }
       }
       @media (max-width: 480px) {
-        body { zoom: 1; }
+        .about-hero h1 { font-size: 1.8rem; }
+        .story-section { padding: 2rem 1.25rem; }
+        .problem-banner { padding: 3rem 1.25rem; }
+        .team-section { padding: 3rem 1.25rem; }
+        .about-cta { padding: 3rem 1.25rem; }
       }
     </style>
     <script defer src="https://va.vercel-scripts.com/v1/script.js"></script>
@@ -320,29 +233,33 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="nav-container">
-        <div class="logo">
-          <a href="/"><img src="/logo.svg" alt="Coast Logo" class="logo-img" style="height: 60px;"></a>
-        </div>
-        <div class="nav-links">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo">
+          <img src="/logo.svg" alt="Coast" class="nav-logo-img">
+        </a>
+        <div class="nav-links" id="nav-links">
           <a href="/">Home</a>
-          <a href="/#features">Features</a>
-          <a href="/" class="btn btn-primary">Join Beta</a>
+          <a href="/#how-it-works">How It Works</a>
+          <a href="/#ecosystem">Features</a>
+          <a href="/#teachers">For Teachers</a>
+          <a href="/about.html" style="color:#1a1a2e;">About Us</a>
         </div>
+        <a href="/#final-cta" class="nav-cta">Join Beta</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
 
     <div class="about-wrapper">
-      <!-- Hero -->
       <div class="about-hero">
-        <p class="label">Our Story</p>
+        <p class="label">About Us</p>
         <h1>Built by students who were tired of studying the wrong way</h1>
         <p class="subtitle">Coast was born at Maastricht University from a simple frustration: everyone studies from past papers, so why doesn't our technology?</p>
       </div>
 
       <div class="section-divider"></div>
 
-      <!-- The Problem -->
       <div class="problem-banner">
         <div class="inner">
           <h2>The Problem We Saw</h2>
@@ -352,7 +269,6 @@
         </div>
       </div>
 
-      <!-- The Origin -->
       <section class="story-section">
         <h2>How It Started</h2>
         <p>It started with a conversation over the summer. <span class="highlight">Rio</span> came to <span class="highlight">Andrea</span> with an idea. What if we could build something that actually understood how students prepare for exams? Not another generic AI chatbot, but a system built on real exam data.</p>
@@ -362,18 +278,16 @@
 
       <div class="section-divider"></div>
 
-      <!-- What We're Building -->
       <section class="story-section">
         <h2>What We're Building</h2>
         <p>Coast takes the thing every student already does, studying from past papers, and supercharges it with AI. But not any AI. Our system is <span class="highlight">grounded in real exam data</span>: your university's past papers, verified marking schemes, and structured course content.</p>
         <p>We package this into an experience that actually makes studying engaging:</p>
         <p><span class="highlight">Smart Notes</span> are generated from your actual lecture content and structured around what really gets examined.</p>
         <p><span class="highlight">Past Paper Quizzes</span> are matched to your notes, so you practice exactly what you've learned, with questions pulled from real exams.</p>
-        <p><span class="highlight">Gamified Leaderboards</span> let you compete with your classmates, build study streaks, collect rewards. Studying shouldn't feel like a chore.</p>
+        <p><span class="highlight">Gamified Leaderboards</span> let you compete with your classmates, build study streaks, and collect rewards. Studying shouldn't feel like a chore.</p>
         <p>And the long-term vision? Generate exam-level questions for <em>any</em> level. University, IB, Cambridge, SAT. For any course, anywhere in the world.</p>
       </section>
 
-      <!-- Team -->
       <div class="team-section">
         <h2>The Team</h2>
         <div class="team-grid">
@@ -392,7 +306,6 @@
         </div>
       </div>
 
-      <!-- Vision -->
       <div class="vision-section">
         <div class="inner">
           <h2>Where We're Going</h2>
@@ -418,7 +331,6 @@
         </div>
       </div>
 
-      <!-- CTA -->
       <div class="about-cta">
         <h2>Want to be part of what we're building?</h2>
         <p>Join the waitlist and help shape the future of exam prep. Early users get exclusive beta access and rewards.</p>
@@ -426,13 +338,16 @@
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-bottom" style="border:none; padding-top:0;">
-          <p>© 2026 Coast. Built by students, for students.</p>
-        </div>
-      </div>
+    <footer class="site-footer">
+      <p>&copy; 2026 Coast B.V. — Maastricht, Netherlands. Built by students, for students.</p>
     </footer>
+
+    <script>
+      const hamburger = document.getElementById('nav-hamburger');
+      const navLinks = document.getElementById('nav-links');
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+      }
+    </script>
   </body>
 </html>

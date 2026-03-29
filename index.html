@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/Blackbird-base.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coast - Learn Faster</title>
+    <title>Coast — The Exam is the Ground Truth</title>
+    <meta name="description" content="Coast is the first study system built around the exam as the ground truth. Upload your lecture. Learn with context. Let Pedro guarantee you understand. Then answer real past exam questions." />
     <meta property="og:site_name" content="Coast">
+    <meta property="og:title" content="Coast — The way you study is broken. Coast fixes it.">
+    <meta property="og:description" content="The first study system built around the exam as the ground truth. Join 200+ students on the waitlist.">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -15,15 +18,10 @@
       "url": "https://www.coast.academy"
     }
     </script>
-    <!-- Google Fonts: Nunito and Nunito Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/style.css">
-    <link rel="stylesheet" href="/src/features.css">
-    <link rel="stylesheet" href="/src/alternating.css">
-    <link rel="stylesheet" href="/src/faq.css">
-    <link rel="stylesheet" href="/src/footer.css">
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -34,106 +32,63 @@
     </script>
   </head>
   <body>
-    <div id="app">
-      <!-- Navbar -->
-      <nav class="navbar">
-        <div class="nav-container">
-          <div class="logo">
-            <!-- Upload your logo to /public/logo.svg -->
-            <img src="/logo.svg" alt="Coast Logo" class="logo-img">
-          </div>
-          <div class="nav-links">
-            <a href="/about.html">About</a>
-            <a href="#features">Features</a>
-            <a href="#join" id="join-beta-btn" class="btn btn-primary">Join Beta</a>
-          </div>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo">
+          <img src="/logowhite.svg" alt="Coast" class="nav-logo-img">
+        </a>
+        <div class="nav-links" id="nav-links">
+          <a href="#how-it-works">How It Works</a>
+          <a href="#pedro">Pedro</a>
+          <a href="#ecosystem">Features</a>
+          <a href="#teachers">For Teachers</a>
+          <a href="/about.html">About Us</a>
+          <a href="#faq">FAQ</a>
         </div>
-      </nav>
-
-      <!-- Announcement Banner -->
-      <div class="announcement-banner">
-        <p>200+ students already on the waitlist. Early signups get exclusive beta access and rewards.</p>
+        <a href="#final-cta" class="nav-cta">Join Beta</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+    </nav>
 
-      <div class="content-wrapper">
-        <!-- Hero Section -->
-        <main class="hero">
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+      <div class="hero-inner">
         <div class="hero-content">
-          <h1>
-            <span class="title-line">Learn Faster.</span>
-            <span class="title-line">Retain Longer.</span>
-            <span class="title-line">Pass Everything.</span>
+          <h1 class="hero-headline reveal">
+            <span class="hero-line">The way you study</span>
+            <span class="hero-line">is <em>broken.</em></span>
+            <span class="hero-line hero-line-gold">Coast fixes it.</span>
           </h1>
-          
-          <ul class="feature-list">
-            <li>
-              <span class="check-icon">✓</span>
-              Study from your university's real past papers
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              AI tutor trained on your course content
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              Gamified streaks, lootboxes, and leaderboards
-            </li>
-          </ul>
-
-          <p class="hero-description">
-            Stop guessing what's on the exam. Coast uses <strong>real past papers</strong> and <strong>AI</strong> to generate practice quizzes, smart notes, and step-by-step solutions tailored to your exact course.
+          <p class="hero-sub reveal-delay-1">
+            Upload your lecture. Get a structured lesson built around your professor's actual content. Practice with exercises. Let Pedro, your adaptive personalised AI tutor, guarantee you understand before you move on. Then answer real past exam questions for exactly what you just learned.
           </p>
-
-          <!-- Mobile-only inline signup -->
-          <div class="mobile-hero-signup">
-            <form action="https://formspree.io/f/xlgnlpae" method="POST" class="mobile-signup-form email-form">
-              <input type="email" name="email" placeholder="Enter your email" required>
-              <input type="hidden" name="source" value="mobile-hero">
-              <button type="submit" class="btn btn-submit">Join Beta</button>
-            </form>
-          </div>
-        </div>
-
-        <div class="hero-video-wrapper">
-          <div class="device-frame">
-            <div class="device-bezel">
-              <div class="device-notch"></div>
-            </div>
-            <div class="device-screen">
-              <!-- Upload your demo video to /public/demo.mp4 -->
-              <video autoplay muted loop playsinline preload="auto" poster="/illustration.svg" id="hero-video">
-                <source src="/demo.mp4" type="video/mp4">
-              </video>
-              <button class="video-play-overlay" id="hero-play-btn" aria-label="Play video">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </main>
-
-      <!-- Email Capture Card -->
-      <section class="email-section">
-        <div class="email-card">
-          <div class="email-header">
-            <span class="info-icon">ⓘ</span>
-            <p>Coming soon. Invite friends to skip the queue. The more you refer, the sooner you get in.</p>
-          </div>
-          <form action="https://formspree.io/f/xlgnlpae" method="POST" class="email-form" id="main-email-form">
-            <div class="input-group">
-              <!-- Upload your mail icon to /public/mail-icon.svg -->
-              <img src="/mail-icon.svg" alt="Mail" class="mail-icon-img">
-              <input type="email" id="email-input" name="email" placeholder="Enter email ..." required>
+          <p class="hero-manifesto reveal-delay-1">
+            This is not a study app. This is the first system built around the exam as the ground truth.
+          </p>
+          <form action="https://formspree.io/f/xlgnlpae" method="POST" class="hero-form email-form reveal-delay-2" id="main-email-form">
+            <div class="hero-input-wrap">
+              <input type="email" name="email" id="email-input" placeholder="Enter your university email" required>
+              <input type="hidden" name="source" value="hero">
               <input type="hidden" name="referred_by" id="referred-by-input" value="">
             </div>
-            <button type="submit" class="btn btn-submit">Save Me</button>
+            <button type="submit" class="btn-cta">Join the Beta</button>
           </form>
+          <div class="hero-proof reveal-delay-2">
+            <span>200+ students already on the waitlist</span>
+            <span class="proof-dot"></span>
+            <span>Built at Maastricht University</span>
+            <span class="proof-dot"></span>
+            <span>Faculty validated</span>
+          </div>
           <!-- Share section (shown after signup) -->
-          <div class="share-section" id="share-section" style="display: none;">
-            <p class="share-title">🎉 You're in! Share to move up the list:</p>
+          <div class="share-section" id="share-section" style="display:none;">
+            <p class="share-title">You're in! Share to move up the list:</p>
             <div class="share-link-container">
               <input type="text" id="share-link" class="share-link-input" readonly>
-              <button type="button" id="copy-link-btn" class="btn btn-copy">Copy</button>
+              <button type="button" id="copy-link-btn" class="btn-copy">Copy</button>
             </div>
             <div class="share-buttons">
               <a id="share-whatsapp" class="share-btn whatsapp" target="_blank" rel="noopener">WhatsApp</a>
@@ -141,313 +96,443 @@
             </div>
           </div>
         </div>
-        </section>
       </div>
+    </section>
 
-      <!-- Trust Banner -->
-      <section class="trust-banner">
-        <p>Built at Maastricht University. Designed around real exams. Trusted by 200+ students on the waitlist.</p>
-      </section>
+    <!-- ========== SOCIAL PROOF STRIP ========== -->
+    <section class="proof-strip">
+      <div class="proof-strip-inner">
+        <blockquote>
+          "Built by a student who spent three years barely attending a lecture, never repeating a year, and passing every exam. Coast is that method, turned into a system."
+        </blockquote>
+      </div>
+    </section>
 
-      <!-- How Coast Works -->
-      <section id="features" class="how-it-works-section">
-        <div class="how-it-works-header">
-          <p class="section-label">How it works</p>
-          <h2>Three steps to exam ready</h2>
+    <!-- ========== THE PROBLEM ========== -->
+    <section class="section section-problem" id="problem">
+      <div class="section-inner">
+        <div class="section-text-block reveal">
+          <p class="section-label">The Problem</p>
+          <h2>Every study tool has the same fatal flaw.</h2>
+          <p class="section-body">
+            They optimise for information delivery. Lectures move at one pace for everyone. Generic AI tools give you answers without checking if you actually understood anything. Past papers, the single most predictive preparation tool, are scattered across WhatsApp groups and disorganised portals. Access is luck, not merit.
+          </p>
+          <p class="section-body section-body-highlight">
+            No existing tool connects what you just learned directly to what you will be tested on.
+          </p>
+          <p class="section-body section-body-gold">Coast does.</p>
         </div>
-        <div class="steps-container">
-          <div class="step">
-            <div class="step-number">01</div>
-            <div class="step-icon">
-              <img src="/feature-icon-2.svg" alt="Past papers icon">
+      </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="section section-steps" id="how-it-works">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <p class="section-label">How It Works</p>
+          <h2>One loop. Five steps. Genuine mastery.</h2>
+          <p class="section-subtitle">Coast is not a collection of features. It is a complete learning system where every step builds toward the one thing that matters: your exam.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card reveal" data-step="01">
+            <div class="step-num">01</div>
+            <h3>Upload your lecture</h3>
+            <p>Drop in your lecture slides or notes. Coast instantly transforms them into a structured lesson, building the conceptual story behind each topic with your professor's actual diagrams and visual content woven directly in. You learn with the same visual language your exam was designed around.</p>
+          </div>
+          <div class="step-card reveal" data-step="02">
+            <div class="step-num">02</div>
+            <h3>Learn with context</h3>
+            <p>Before any question is asked, Coast gives you the why before the what. Every topic is introduced with narrative and context so nothing is memorised without being understood. Exercises built directly from your lecture content test the exact methods and logic your course requires.</p>
+          </div>
+          <div class="step-card reveal" data-step="03">
+            <div class="step-num">03</div>
+            <h3>Pedro ensures you understand</h3>
+            <p>Pedro is your personalised Socratic AI tutor. He never gives you the answer. He asks the right questions until you find it yourself. Pedro maintains a persistent memory of your strengths, weaknesses, and learning patterns, updated every five messages. Every session builds on the last.</p>
+          </div>
+          <div class="step-card reveal" data-step="04">
+            <div class="step-num">04</div>
+            <h3>Real past exam questions, automatically matched</h3>
+            <p>Once you have mastered the building blocks, Coast serves you real past examination questions mapped to exactly what you just learned. Not generic AI-generated quizzes. Verified past papers from your actual university, tagged by topic and difficulty. The exam is the ground truth.</p>
+          </div>
+          <div class="step-card step-card-final reveal" data-step="05">
+            <div class="step-num">05</div>
+            <h3>Next topic unlocks</h3>
+            <p>Mastery verified. Progress earned. The next module opens when you are genuinely ready, not just when time runs out.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PLATFORM SHOWCASE ========== -->
+    <section class="section section-showcase" id="showcase">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <p class="section-label">See it in action</p>
+          <h2>Your lecture, transformed into a lesson.</h2>
+          <p class="section-subtitle">A Quantitative Methods 1 lesson on Coast. Your professor's diagrams and charts appear directly in your notes, so you study with the same visual language your exam uses.</p>
+        </div>
+        <div class="showcase-frame reveal">
+          <img src="/platformimage.png" alt="Coast platform showing a Quantitative Methods 1 lesson with My Notes panel open, displaying lecture charts and formulas" class="showcase-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHY COAST IS DIFFERENT ========== -->
+    <section class="section section-compare" id="why-different">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <p class="section-label">Why Coast Is Different</p>
+          <h2>The electric light did not come from the continuous improvement of candles.</h2>
+          <p class="section-subtitle">Every other study tool (Quizlet, StudySmarter, ChatGPT) is a better candle. They make passive learning slightly more convenient. Coast is not a better candle.</p>
+          <p class="section-subtitle">Coast is the first study system built around the exam as the ground truth, not as an afterthought. The lesson, the exercises, Pedro, and the past paper questions are not separate features. They are one continuous loop designed to produce genuine mastery, not surface recall.</p>
+        </div>
+
+        <div class="compare-grid reveal">
+          <div class="compare-col compare-generic">
+            <div class="compare-header">
+              <span class="compare-icon">🤖</span>
+              <h3>Generic AI Tools</h3>
             </div>
-            <h3>We gather your past papers</h3>
-            <p>Real exams from your university, cleaned, structured, and tagged by topic and difficulty.</p>
+            <ul>
+              <li>No memory between sessions</li>
+              <li>No syllabus grounding</li>
+              <li>No past paper alignment</li>
+              <li>Give you the answer</li>
+              <li>Never check if you understood it</li>
+            </ul>
           </div>
-          <div class="step-connector">
-            <svg viewBox="0 0 40 24"><path d="M0 12h32M28 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-          </div>
-          <div class="step">
-            <div class="step-number">02</div>
-            <div class="step-icon">
-              <img src="/feature-icon-1.svg" alt="AI study plan icon">
+          <div class="compare-col compare-traditional">
+            <div class="compare-header">
+              <span class="compare-icon">📚</span>
+              <h3>Traditional Study Tools</h3>
             </div>
-            <h3>AI builds your study plan</h3>
-            <p>Smart notes, matched quizzes, and step by step solutions generated from your actual course content.</p>
+            <ul>
+              <li>Flashcards, summaries, practice tests</li>
+              <li>Optimise for information delivery</li>
+              <li>Assume reading equals learning</li>
+              <li>Move at one pace for everyone</li>
+              <li>No personalisation</li>
+            </ul>
           </div>
-          <div class="step-connector">
-            <svg viewBox="0 0 40 24"><path d="M0 12h32M28 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-          </div>
-          <div class="step">
-            <div class="step-number">03</div>
-            <div class="step-icon">
-              <img src="/feature-icon-3.svg" alt="Gamified learning icon">
+          <div class="compare-col compare-coast">
+            <div class="compare-header">
+              <img src="/Blackbird-base.svg" alt="Coast" class="compare-coast-icon">
+              <h3>Coast</h3>
             </div>
-            <h3>Practice, compete, pass</h3>
-            <p>Earn XP, climb leaderboards, collect rewards. Study becomes a game you actually want to play.</p>
+            <ul>
+              <li>Persistent student memory</li>
+              <li>Syllabus-anchored lessons</li>
+              <li>Real past paper matching</li>
+              <li>Pedro guarantees understanding</li>
+              <li>Every student learns at their own pace, at their own level, until they are genuinely ready</li>
+            </ul>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- UI Showcase -->
-      <section class="ui-showcase-section">
-        <div class="showcase-header">
-          <p class="section-label">Product preview</p>
-          <h2>See Coast in action</h2>
-        </div>
-        <div class="showcase-controls">
-          <div class="showcase-tabs">
-            <button class="showcase-tab active" data-screen="1">Notes</button>
-            <button class="showcase-tab" data-screen="2">Quizzes</button>
-            <button class="showcase-tab" data-screen="3">Levels</button>
-            <button class="showcase-tab" data-screen="4">Tidebook</button>
-            <button class="showcase-tab" data-screen="5">Landing Page</button>
+    <!-- ========== PEDRO ========== -->
+    <section class="section section-pedro" id="pedro">
+      <div class="section-inner">
+        <div class="pedro-layout reveal">
+          <div class="pedro-text">
+            <p class="section-label">Meet Pedro</p>
+            <h2>Pedro never gives you the answer. That's the point.</h2>
+            <p class="section-body">Most AI tools solve your problem for you. Pedro teaches you to solve it yourself.</p>
+            <p class="section-body">Pedro is a Socratic AI tutor with a three-layer memory model. <strong>Permanent notes</strong> capture stable patterns in your understanding that persist across every session. <strong>Active notes</strong> update in real time during your current session. <strong>Pattern notes</strong> track recurring misconceptions as they emerge.</p>
+            <p class="section-body">Every five messages, Pedro updates his model of you. He goes deeper where you struggle. He moves faster where you are confident. He adapts to how <em>you</em> think, not how the average student thinks.</p>
+            <p class="section-body section-body-gold">This is not ChatGPT with a different interface. This is a tutor that knows you.</p>
           </div>
-          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode preview">
-            <svg class="toggle-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-            <svg class="toggle-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-          </button>
-        </div>
-        <div class="showcase-frame">
-          <div class="showcase-device" id="showcase-device">
-            <!-- Drop PNG files into /public/ with these names -->
-            <img src="/screen-1.png" alt="Notes" class="showcase-screen active" data-screen="1" data-light="/screen-1.png" data-dark="/screen-1-dark.png">
-            <img src="/screen-2.png" alt="Quizzes" class="showcase-screen" data-screen="2" data-light="/screen-2.png" data-dark="/screen-2-dark.png">
-            <img src="/screen-3.png" alt="Levels" class="showcase-screen" data-screen="3" data-light="/screen-3.png" data-dark="/screen-3-dark.png">
-            <img src="/screen-4.png" alt="Tidebook" class="showcase-screen" data-screen="4" data-light="/screen-4.png" data-dark="/screen-4-dark.png">
-            <img src="/screen-5.png" alt="Landing Page" class="showcase-screen" data-screen="5" data-light="/screen-5.png" data-dark="/screen-5-dark.png">
+          <div class="pedro-visual">
+            <div class="pedro-memory-card">
+              <div class="memory-layer">
+                <div class="memory-dot memory-dot-perm"></div>
+                <div>
+                  <h4>Permanent Notes</h4>
+                  <p>Stable patterns that persist across every session</p>
+                </div>
+              </div>
+              <div class="memory-layer">
+                <div class="memory-dot memory-dot-active"></div>
+                <div>
+                  <h4>Active Notes</h4>
+                  <p>Real-time updates during your current session</p>
+                </div>
+              </div>
+              <div class="memory-layer">
+                <div class="memory-dot memory-dot-pattern"></div>
+                <div>
+                  <h4>Pattern Notes</h4>
+                  <p>Recurring misconceptions tracked as they emerge</p>
+                </div>
+              </div>
+              <div class="memory-update">
+                <span class="memory-pulse"></span>
+                Model updates every 5 messages
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Video Section -->
-      <section class="video-section">
-        <div class="video-section-inner">
-          <p class="section-label">Watch the walkthrough</p>
-          <h2>See how Coast transforms exam prep</h2>
-          <div class="video-player-frame">
-            <video id="full-video" poster="/illustration.svg" playsinline preload="metadata">
-              <source src="/demo.mp4" type="video/mp4">
-            </video>
-            <button class="video-big-play" id="full-video-play" aria-label="Play video">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    <!-- ========== ECOSYSTEM ========== -->
+    <section class="section section-ecosystem" id="ecosystem">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <p class="section-label">The Full Ecosystem</p>
+          <h2>Everything you need. Nothing you don't.</h2>
+          <p class="section-subtitle">Coast is a complete study environment. Every tool designed around one principle: genuine mastery before you move on.</p>
+        </div>
+
+        <div class="eco-grid">
+          <div class="eco-card reveal">
+            <div class="eco-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            </div>
+            <h3>Smart Study Guides</h3>
+            <p>Automatically generated from your lecture slides. Clean, structured, downloadable and editable. Mind map and visual explanation features included.</p>
+          </div>
+          <div class="eco-card reveal">
+            <div class="eco-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+            </div>
+            <h3>Review Deck</h3>
+            <p>Global flashcards built on spaced repetition science. Intelligently scheduled so you review what you are about to forget, not what you already know.</p>
+          </div>
+          <div class="eco-card eco-card-catch reveal">
+            <div class="eco-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+            </div>
+            <h3>The Catch System</h3>
+            <p>Complete a past paper question set and earn a fish drop of varying rarity. Rare catches displayed on your public profile. Leaderboards, badges, and levels create campus-wide competitive loops tied directly to academic effort.</p>
+          </div>
+          <div class="eco-card reveal">
+            <div class="eco-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/></svg>
+            </div>
+            <h3>Daily Streaks</h3>
+            <p>Consistent daily engagement rewarded. Because consistency is where real mastery is built.</p>
+          </div>
+          <div class="eco-card reveal">
+            <div class="eco-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+            </div>
+            <h3>Share Lessons</h3>
+            <p>Send lessons you built to friends and coursemates. Peer-to-peer learning built into the core product.</p>
+          </div>
+          <div class="eco-card reveal">
+            <div class="eco-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            </div>
+            <h3>In-app Utilities</h3>
+            <p>Floating scientific calculator, always available. Integrated Pomodoro timer for focus sessions. Light and dark mode so you study your way.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOR TEACHERS ========== -->
+    <section class="section section-teachers" id="teachers">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <p class="section-label">For Teachers</p>
+          <h2>Learning and teaching are two sides of the same process.</h2>
+          <p class="section-subtitle">Coast is not just built for students. The better students learn, the better teachers can teach. Coast gives faculty the data to make that happen.</p>
+          <p class="section-subtitle">For the first time, faculty can see exactly where their students struggle in real time, not after exam results come in. Universities sit on decades of past papers with zero analytical use. Coast turns that into live intelligence.</p>
+        </div>
+
+        <div class="teacher-grid reveal">
+          <div class="teacher-card">
+            <div class="teacher-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <h3>Real-Time Analytics</h3>
+            <p>See exactly which past paper questions your students fail on most. Identify knowledge gaps before exam day, not after.</p>
+          </div>
+          <div class="teacher-card">
+            <div class="teacher-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3>Global Benchmarking</h3>
+            <p>Compare your cohort's performance against international averages. Understand where your curriculum needs to evolve.</p>
+          </div>
+          <div class="teacher-card">
+            <div class="teacher-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+            <h3>AI Curriculum Generation</h3>
+            <p>Generate new exam questions, update course content, and build fresh presentation slides, all informed by live student performance data.</p>
+          </div>
+        </div>
+        <p class="teacher-footnote reveal">"Thesis supervisor and multiple Maastricht University faculty members have confirmed institutional interest in the teacher platform."</p>
+      </div>
+    </section>
+
+    <!-- ========== BUILT BY STUDENTS ========== -->
+    <section class="section section-story" id="origin">
+      <div class="section-inner">
+        <div class="story-layout reveal">
+          <div class="story-text">
+            <p class="section-label">Built from experience</p>
+            <h2>This is not a product designed in a boardroom.</h2>
+            <p class="section-body">Coast was born at Maastricht University out of frustration with passive teaching that moves at one pace for everyone. Instead of accepting it, we reverse-engineered our own education using AI, past papers, and course structures until we understood every topic in less time than a single lecture.</p>
+            <p class="section-body section-body-highlight">Three years. Strong GPA. Never held back.</p>
+            <p class="section-body">Coast is that method, rebuilt from the ground up as infrastructure. Not optimised. Replaced entirely.</p>
+            <p class="section-body" style="color:var(--muted);">Faculty validated. Thesis supervised by the Department of Advanced Computing Sciences.</p>
+            <a href="/about.html" style="display:inline-flex;align-items:center;gap:0.5rem;font-weight:700;font-size:0.95rem;margin-top:0.5rem;">Read our full story <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== STATS ========== -->
+    <section class="section section-stats" id="stats">
+      <div class="section-inner">
+        <div class="stats-grid reveal">
+          <div class="stat-block">
+            <div class="stat-number" data-target="200">0</div>
+            <div class="stat-plus">+</div>
+            <div class="stat-desc">students on the waitlist</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number" data-target="4">0</div>
+            <div class="stat-plus">+</div>
+            <div class="stat-desc">Maastricht faculty members who have confirmed interest</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number" data-target="1">0</div>
+            <div class="stat-desc">university. <em>For now.</em></div>
+          </div>
+        </div>
+        <p class="stats-footnote reveal">We are starting at Maastricht. We are building for the world.</p>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="section section-faq" id="faq">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <h2>Got questions?</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <button class="faq-q">
+              <span>Is Coast free?</span>
+              <svg class="faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
+            <div class="faq-a">
+              <p>Yes. We are launching with a generous free tier. A Pro plan for unlimited Pedro interactions and advanced past paper access will follow, priced for student budgets.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q">
+              <span>Is Pedro just ChatGPT with a different skin?</span>
+              <svg class="faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>No. Pedro is architecturally different. He is grounded in your university's actual syllabus and past paper content, and he maintains a persistent memory of your learning patterns across every session. Generic AI has no memory, no syllabus grounding, and no accountability for whether you actually understood anything.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q">
+              <span>Does this cover my university and course?</span>
+              <svg class="faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>We are launching at Maastricht University and expanding based on user demand. Sign up and tell us what you study. Your vote shapes what we build next.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q">
+              <span>When can I start using it?</span>
+              <svg class="faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>We are in private beta. Join the waitlist and you will be among the first in when the next wave of invites opens.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q">
+              <span>Can I pay to win on the leaderboard?</span>
+              <svg class="faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Never. Your rank is determined purely by academic progress and mastery. You cannot buy your way to the top.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q">
+              <span>What makes the past paper matching different?</span>
+              <svg class="faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Our proprietary OCR pipeline reads, structures, and tags real past examination papers by topic, difficulty, and concept type. Every question Coast serves you is a verified real exam question, matched to exactly what you just learned in your lesson.</p>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Alternating Features (Deep Dive) -->
-      <section class="alternating-features">
-        
-        <!-- Row 1: Text Left, Image Right -->
-        <div class="feature-row">
-          <div class="feature-text-content">
-            <h2>Don't Just Practice.<br>Understand.</h2>
-            <p>Stop memorizing mark schemes. Our AI breaks down complex questions into step-by-step logic, helping you spot the patterns for next time.</p>
-            <ul class="feature-list-check">
-              <li>
-                <span class="check-circle">✓</span>
-                Conversational explanations that adapt to how you learn
-              </li>
-              <li>
-                <span class="check-circle">✓</span>
-                A recommendation engine that knows your weak spots and tells you exactly what to study next
-              </li>
-            </ul>
+    <!-- ========== FINAL CTA ========== -->
+    <section class="section section-final-cta" id="final-cta">
+      <div class="section-inner">
+        <div class="final-cta-content reveal">
+          <h2>The exam is the ground truth.<br>Coast is built around it.</h2>
+          <p class="final-cta-sub">Join 200+ students already on the waitlist. Early access is free. Your first lesson is waiting.</p>
+          <form action="https://formspree.io/f/xlgnlpae" method="POST" class="final-cta-form email-form">
+            <input type="email" name="email" placeholder="Enter your university email" required>
+            <input type="hidden" name="source" value="final-cta">
+            <button type="submit" class="btn-cta">Join the Beta</button>
+          </form>
+          <p class="final-cta-note">No credit card. No commitment. Just a better way to study.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <img src="/Coastlogo-white.svg" alt="Coast" class="footer-logo">
+            <p class="footer-tagline">Built by students who found a better way to learn.<br>Built for every student who deserves one.</p>
           </div>
-          <div class="feature-image-container">
-            <!-- Upload /public/practice-preview.svg -->
-            <img src="/practice-preview.svg" alt="AI Conversation Preview" class="feature-showcase-img">
+          <div class="footer-links">
+            <div class="footer-col">
+              <h4>Product</h4>
+              <a href="#how-it-works">How it works</a>
+              <a href="#ecosystem">Features</a>
+              <a href="#pedro">Pedro</a>
+            </div>
+            <div class="footer-col">
+              <h4>Company</h4>
+              <a href="#teachers">For Teachers</a>
+              <a href="/about.html">About Us</a>
+              <a href="/contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+              <h4>Legal</h4>
+              <a href="/privacy.html">Privacy Policy</a>
+              <a href="/terms.html">Terms of Service</a>
+            </div>
+            <div class="footer-col">
+              <h4>Social</h4>
+              <a href="https://www.instagram.com/coastacademy_?igsh=MWU1M29oYTYzdWhldA==" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://www.linkedin.com/company/coast-academy" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://www.tiktok.com/@coastacademy" target="_blank" rel="noopener">TikTok</a>
+            </div>
           </div>
         </div>
-
-        <!-- Row 2: Image Left, Text Right -->
-        <div class="feature-row reverse">
-          <div class="feature-image-container">
-            <!-- Upload /public/addictive-preview.svg -->
-            <img src="/addictive-preview.svg" alt="Gamification Dashboard" class="feature-showcase-img">
-          </div>
-          <div class="feature-text-content">
-            <h2>Make Studying Addictive.</h2>
-            <p>Your Tidebook is your living academic trophy case. Every past paper you solve and topic you master earns you coins, XP, and unique collectible fish for your personal aquarium. Watch your collection grow as your knowledge deepens.</p>
-            <ul class="feature-list-check">
-              <li>
-                <span class="check-circle">✓</span>
-                Maintain Your Streak
-              </li>
-              <li>
-                <span class="check-circle">✓</span>
-                Show Off Your Mastery
-              </li>
-              <li>
-                <span class="check-circle">✓</span>
-                Build Your Collection
-              </li>
-            </ul>
-          </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Coast B.V. — Maastricht, Netherlands</p>
+          <p>Built by students, for students, for every student.</p>
         </div>
+      </div>
+    </footer>
 
-      </section>
-
-      <!-- FAQ Section -->
-      <section id="faq" class="faq-section">
-        <div class="faq-header">
-          <h2>Coast FAQ</h2>
-          <p>Got questions? We've got answers. Learn more about how Coast works and what to expect when we launch.</p>
-        </div>
-
-        <div class="faq-container">
-          <!-- Sidebar -->
-          <div class="faq-sidebar">
-            <div class="faq-category active" data-target="access">
-              <div class="category-indicator"></div>
-              <span class="category-name">Access & Pricing</span>
-            </div>
-            <div class="faq-category" data-target="ai">
-              <div class="category-indicator"></div>
-              <span class="category-name">The AI & Accuracy</span>
-            </div>
-            <div class="faq-category" data-target="content">
-              <div class="category-indicator"></div>
-              <span class="category-name">Content & Subjects</span>
-            </div>
-            <div class="faq-category" data-target="gamification">
-              <div class="category-indicator"></div>
-              <span class="category-name">Gamification & Rewards</span>
-            </div>
-          </div>
-
-          <!-- Content Card -->
-          <div class="faq-content-card">
-            
-            <!-- Access & Pricing Content -->
-            <div id="access" class="faq-content-group active">
-              <h3 class="group-title">Access & Pricing</h3>
-              <div class="qa-grid">
-                <div class="qa-item">
-                  <h4>Is Coast free to use?</h4>
-                  <p>Yes! We are launching with a generous free tier that gives you access to past papers and daily AI tutoring. We will have a Pro plan for unlimited AI deep-dives and advanced analytics, but our goal is to keep it student-budget friendly.</p>
-                </div>
-                <div class="qa-item">
-                  <h4>When can I actually start using it?</h4>
-                  <p>We are currently in private beta. If you join the waitlist today, you'll be first in line when we open up the next wave of invites (and you might snag some early-adopter perks).</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- The AI & Accuracy Content -->
-            <div id="ai" class="faq-content-group">
-              <h3 class="group-title">The AI & Accuracy</h3>
-              <div class="qa-grid">
-                <div class="qa-item">
-                  <h4>Is the AI Tutor just ChatGPT wrapped in a different skin?</h4>
-                  <p>No. Unlike general chatbots, our AI is grounded in real, structured past paper data. It doesn't just guess; it uses the specific context of your university's curriculum and marking schemes to explain the logic behind the answer, not just the result.</p>
-                </div>
-                <div class="qa-item">
-                  <h4>Can I trust the explanations?</h4>
-                  <p>Our system uses a "Teacher-in-the-Loop" verification method. While AI is powerful, we verify our core datasets against official marking schemes to ensure you aren't learning the wrong thing.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Content & Subjects -->
-            <div id="content" class="faq-content-group">
-              <h3 class="group-title">Content & Subjects</h3>
-              <div class="qa-grid">
-                <div class="qa-item">
-                  <h4>Does this cover my specific university and course?</h4>
-                  <p>We are launching initially with International Buisness modules at Maastricht. We are adding new courses every week based on user votes, so sign up and tell us what you study!</p>
-                </div>
-                <div class="qa-item">
-                  <h4>How do you calculate the "Difficulty Rating" for questions?</h4>
-                  <p>We use a proprietary OCR system that analyzes the complexity of the question, the average time students take to solve it, and historical pass rates for that specific topic.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Gamification & Rewards -->
-            <div id="gamification" class="faq-content-group">
-              <h3 class="group-title">Gamification & Rewards</h3>
-              <div class="qa-grid">
-                <div class="qa-item">
-                  <h4>What exactly are "Lootboxes"?</h4>
-                  <p>Lootboxes are rewards you earn by maintaining study streaks and mastering topics, they come in the form of fish and bait. They contain XP boosts, customization items for your profile/avatar, and exclusive badges to show off on the leaderboard.</p>
-                </div>
-                <div class="qa-item">
-                  <h4>Can I pay to win?</h4>
-                  <p>Never. Your leaderboard rank is determined purely by your academic progress and mastery. You can't buy grades, and you can't buy your way to the top of our leaderboard.</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="footer-container">
-          <div class="footer-top">
-            <!-- Brand -->
-            <div class="footer-brand">
-              <!-- Upload /public/Coastlogo-white.svg -->
-              <img src="/Coastlogo-white.svg" alt="Coast Logo" class="footer-logo">
-              <p class="footer-slogan">Level Up Your Uni Life.</p>
-            </div>
-
-            <!-- Links -->
-            <div class="footer-links-group">
-              <div class="footer-column">
-                <h4>Features</h4>
-                <ul>
-                  <li><a href="#features">AI Tutor</a></li>
-                  <li><a href="#features">Past paper Vault</a></li>
-                  <li><a href="#features">Gamification</a></li>
-                </ul>
-              </div>
-              <div class="footer-column">
-                <h4>About us</h4>
-                <ul>
-                  <li><a href="/about.html">Our Story</a></li>
-                  <li><a href="/contact.html">Contact</a></li>
-                  <li><a href="/university/">Universities</a></li>
-                </ul>
-              </div>
-              <div class="footer-column">
-                <h4>Legal</h4>
-                <ul>
-                  <li><a href="/privacy.html">Privacy Policy</a></li>
-                  <li><a href="/terms.html">Terms of Service</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Socials -->
-            <div class="footer-socials">
-              <a href="https://www.instagram.com/coastacademy_?igsh=MWU1M29oYTYzdWhldA==" target="_blank" rel="noopener noreferrer"><img src="/instagram-white-icon.svg" alt="Instagram" class="social-icon"></a>
-            </div>
-          </div>
-
-          <!-- CTA -->
-          <div class="footer-cta">
-            <h3>Ready to get that First Class degree?</h3>
-            <form action="https://formspree.io/f/xlgnlpae" method="POST" class="footer-form">
-              <div class="footer-input-group">
-                <!-- Upload /public/mail-icon.svg -->
-                <img src="/mail-icon.svg" alt="Mail" class="footer-mail-icon-img">
-                <input type="email" name="email" placeholder="Enter email ..." required>
-              </div>
-              <button type="submit" class="btn-footer">Join Beta</button>
-            </form>
-          </div>
-
-          <!-- Copyright -->
-          <div class="footer-bottom">
-            <p>© 2026 Coast. Built by students, for students.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
