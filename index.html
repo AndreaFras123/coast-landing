@@ -32,6 +32,31 @@
     </script>
   </head>
   <body>
+    <!-- ========== MAINTENANCE OVERLAY ========== -->
+    <div id="maintenance-overlay" style="position:fixed;inset:0;z-index:99999;background:#08080C;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;">
+      <img src="/logowhite.svg" alt="Coast" style="height:44px;width:auto;position:fixed;top:2rem;right:2rem;">
+      <div style="text-align:center;max-width:480px;">
+        <h1 style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.6rem;line-height:1.5;color:#EEEAE4;margin-bottom:2rem;">Coast is currently undergoing updates.<br>We will be back soon.</h1>
+        <form action="https://formspree.io/f/xlgnlpae" method="POST" id="maintenance-form" style="display:flex;max-width:420px;margin:0 auto;background:#131318;border:1px solid rgba(255,255,255,0.06);border-radius:100px;padding:0.35rem;">
+          <input type="email" name="email" placeholder="Enter your email" required style="flex:1;background:none;border:none;outline:none;font-family:'Nunito Sans',sans-serif;font-size:0.95rem;color:#EEEAE4;padding-left:1.25rem;">
+          <input type="hidden" name="source" value="maintenance">
+          <button type="submit" style="font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:700;padding:0.8rem 1.6rem;background:#D4A843;color:#0C0C0F;border:none;border-radius:100px;cursor:pointer;white-space:nowrap;">Join the Waitlist</button>
+        </form>
+      </div>
+      <script>
+        document.getElementById('maintenance-form').addEventListener('submit',async(e)=>{e.preventDefault();const b=e.target.querySelector('button'),i=e.target.querySelector('input[name="email"]');b.disabled=true;b.textContent='Joining...';try{const r=await fetch(e.target.action,{method:'POST',body:new FormData(e.target),headers:{'Accept':'application/json'}});if(r.ok){b.textContent="You're in!";b.style.background='#4ADE80';i.value='';}else{b.textContent='Join the Waitlist';b.disabled=false;}}catch{b.textContent='Join the Waitlist';b.disabled=false;}});
+      </script>
+      <style>
+        @media(max-width:480px){
+          #maintenance-overlay img{height:36px!important;top:1.25rem!important;right:1.25rem!important;}
+          #maintenance-overlay h1{font-size:1.35rem!important;}
+          #maintenance-overlay form{flex-direction:column!important;border-radius:16px!important;padding:0.5rem!important;}
+          #maintenance-overlay form input[type="email"]{padding:0.65rem 0.75rem!important;}
+          #maintenance-overlay form button{width:100%!important;border-radius:12px!important;}
+        }
+      </style>
+    </div>
+
     <!-- ========== NAVBAR ========== -->
     <nav class="navbar" id="navbar">
       <div class="nav-inner">
