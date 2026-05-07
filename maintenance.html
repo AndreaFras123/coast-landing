@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Blackbird-base.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coast — We'll be back soon</title>
+    <meta name="robots" content="noindex">
+    <meta property="og:site_name" content="Coast">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "vbr4e0edei");
+    </script>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { height: 100%; }
+      body {
+        font-family: 'Nunito Sans', sans-serif;
+        background: #08080C;
+        color: #EEEAE4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
+      .logo { position: fixed; top: 2rem; right: 2rem; }
+      .logo img { height: 44px; width: auto; }
+      .content { text-align: center; max-width: 480px; padding: 2rem; }
+      h1 {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 800;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+        color: #EEEAE4;
+      }
+      .form-wrap {
+        display: flex;
+        max-width: 420px;
+        margin: 0 auto;
+        background: #131318;
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 100px;
+        padding: 0.35rem;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      .form-wrap:focus-within {
+        border-color: #D4A843;
+        box-shadow: 0 0 0 4px rgba(212,168,67,0.08);
+      }
+      .form-wrap input {
+        flex: 1;
+        background: none;
+        border: none;
+        outline: none;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 0.95rem;
+        color: #EEEAE4;
+        padding-left: 1.25rem;
+      }
+      .form-wrap input::placeholder { color: #5C5B66; }
+      .form-wrap button {
+        font-family: 'Nunito', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        padding: 0.8rem 1.6rem;
+        background: #D4A843;
+        color: #0C0C0F;
+        border: none;
+        border-radius: 100px;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.2s;
+      }
+      .form-wrap button:hover { background: #E8C05A; }
+      @media (max-width: 480px) {
+        .logo { top: 1.25rem; right: 1.25rem; }
+        .logo img { height: 36px; }
+        h1 { font-size: 1.35rem; }
+        .form-wrap {
+          flex-direction: column;
+          border-radius: 16px;
+          padding: 0.5rem;
+        }
+        .form-wrap input { padding: 0.65rem 0.75rem; }
+        .form-wrap button { width: 100%; border-radius: 12px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">
+      <img src="/logowhite.svg" alt="Coast">
+    </div>
+    <div class="content">
+      <h1>Coast is currently undergoing updates.<br>We will be back soon.</h1>
+      <form action="https://formspree.io/f/xlgnlpae" method="POST" class="form-wrap" id="waitlist-form">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="hidden" name="source" value="maintenance">
+        <button type="submit">Join the Waitlist</button>
+      </form>
+    </div>
+    <script>
+      document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = e.target.querySelector('button');
+        const input = e.target.querySelector('input[name="email"]');
+        btn.disabled = true;
+        btn.textContent = 'Joining...';
+        try {
+          const res = await fetch(e.target.action, { method: 'POST', body: new FormData(e.target), headers: { 'Accept': 'application/json' } });
+          if (res.ok) { btn.textContent = "You're in!"; btn.style.background = '#4ADE80'; input.value = ''; }
+          else { btn.textContent = 'Join the Waitlist'; btn.disabled = false; }
+        } catch { btn.textContent = 'Join the Waitlist'; btn.disabled = false; }
+      });
+    </script>
+  </body>
+</html>

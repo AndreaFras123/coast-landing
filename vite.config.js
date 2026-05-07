@@ -10,6 +10,7 @@ export default defineConfig({
         contact: resolve(__dirname, 'contact.html'),
         privacy: resolve(__dirname, 'privacy.html'),
         terms: resolve(__dirname, 'terms.html'),
+        maintenance: resolve(__dirname, 'maintenance.html'),
         // University pages
         universities: resolve(__dirname, 'university/index.html'),
         maastricht: resolve(__dirname, 'university/maastricht-university/index.html'),

@@ -23,3 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 public/demo-original.mp4
+.vercel

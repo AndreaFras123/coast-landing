@@ -48,26 +48,38 @@
       </script>
       <script>
         (async function(){
-          try{
-            // Allow manual bypass via ?preview=1 (so you can still view the landing while in Maastricht)
-            const params = new URLSearchParams(window.location.search);
-            if(params.get('preview') === '1'){ sessionStorage.setItem('coast_preview','1'); }
-            if(sessionStorage.getItem('coast_preview') === '1') return;
-            // Force overlay (for testing) via ?maintenance=1
-            if(params.get('maintenance') === '1'){
-              document.getElementById('maintenance-overlay').style.display = 'flex';
-              return;
-            }
-            const res = await fetch('https://ipapi.co/json/');
-            if(!res.ok) return; // fail open: show landing if geo lookup fails
-            const data = await res.json();
-            const city = (data.city || '').toLowerCase();
-            const region = (data.region || '').toLowerCase();
-            // Match Maastricht specifically (Limburg region in NL is broader, so we only match the city)
-            if(city.includes('maastricht')){
-              document.getElementById('maintenance-overlay').style.display = 'flex';
-            }
-          }catch(_){ /* fail open */ }
+          const params = new URLSearchParams(window.location.search);
+          if(params.get('preview') === '1'){ sessionStorage.setItem('coast_preview','1'); }
+          if(sessionStorage.getItem('coast_preview') === '1') return;
+          if(params.get('maintenance') === '1'){
+            window.location.replace('/maintenance.html');
+            return;
+          }
+          const showOverlay = () => { window.location.replace('/maintenance.html'); };
+          const UM_IP_PREFIXES = ['137.120.', '145.94.'];
+          const checkData = (d) => {
+            const city = (d.city || '').toLowerCase();
+            const region = (d.region || d.region_code || '').toLowerCase();
+            const country = (d.country || d.country_code || '').toUpperCase();
+            const ip = d.ip || '';
+            const postal = (d.postal || d.zip || '').toString();
+            const isMaastricht = city.includes('maastricht');
+            const isLimburg = country === 'NL' && (region === 'li' || region.includes('limburg'));
+            const isUMIP = UM_IP_PREFIXES.some(p => ip.startsWith(p));
+            const isMaastrichtPostal = country === 'NL' && /^62[12]\d/.test(postal);
+            return isMaastricht || isLimburg || isUMIP || isMaastrichtPostal;
+          };
+          const tryEndpoint = async (url) => {
+            try {
+              const r = await fetch(url, { cache: 'no-store' });
+              if(!r.ok) return null;
+              return await r.json();
+            } catch(_) { return null; }
+          };
+          let data = await tryEndpoint('https://ipapi.co/json/');
+          if(!data) data = await tryEndpoint('https://ipwho.is/');
+          if(!data) data = await tryEndpoint('https://get.geojs.io/v1/ip/geo.json');
+          if(data && checkData(data)) showOverlay();
         })();
       </script>
       <style>
