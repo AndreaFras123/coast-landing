@@ -32,8 +32,8 @@
     </script>
   </head>
   <body>
-    <!-- ========== MAINTENANCE OVERLAY ========== -->
-    <div id="maintenance-overlay" style="position:fixed;inset:0;z-index:99999;background:#08080C;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;">
+    <!-- ========== MAINTENANCE OVERLAY (Maastricht only) ========== -->
+    <div id="maintenance-overlay" style="position:fixed;inset:0;z-index:99999;background:#08080C;display:none;flex-direction:column;align-items:center;justify-content:center;padding:2rem;">
       <img src="/logowhite.svg" alt="Coast" style="height:44px;width:auto;position:fixed;top:2rem;right:2rem;">
       <div style="text-align:center;max-width:480px;">
         <h1 style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.6rem;line-height:1.5;color:#EEEAE4;margin-bottom:2rem;">Coast is currently undergoing updates.<br>We will be back soon.</h1>
@@ -45,6 +45,30 @@
       </div>
       <script>
         document.getElementById('maintenance-form').addEventListener('submit',async(e)=>{e.preventDefault();const b=e.target.querySelector('button'),i=e.target.querySelector('input[name="email"]');b.disabled=true;b.textContent='Joining...';try{const r=await fetch(e.target.action,{method:'POST',body:new FormData(e.target),headers:{'Accept':'application/json'}});if(r.ok){b.textContent="You're in!";b.style.background='#4ADE80';i.value='';}else{b.textContent='Join the Waitlist';b.disabled=false;}}catch{b.textContent='Join the Waitlist';b.disabled=false;}});
+      </script>
+      <script>
+        (async function(){
+          try{
+            // Allow manual bypass via ?preview=1 (so you can still view the landing while in Maastricht)
+            const params = new URLSearchParams(window.location.search);
+            if(params.get('preview') === '1'){ sessionStorage.setItem('coast_preview','1'); }
+            if(sessionStorage.getItem('coast_preview') === '1') return;
+            // Force overlay (for testing) via ?maintenance=1
+            if(params.get('maintenance') === '1'){
+              document.getElementById('maintenance-overlay').style.display = 'flex';
+              return;
+            }
+            const res = await fetch('https://ipapi.co/json/');
+            if(!res.ok) return; // fail open: show landing if geo lookup fails
+            const data = await res.json();
+            const city = (data.city || '').toLowerCase();
+            const region = (data.region || '').toLowerCase();
+            // Match Maastricht specifically (Limburg region in NL is broader, so we only match the city)
+            if(city.includes('maastricht')){
+              document.getElementById('maintenance-overlay').style.display = 'flex';
+            }
+          }catch(_){ /* fail open */ }
+        })();
       </script>
       <style>
         @media(max-width:480px){
